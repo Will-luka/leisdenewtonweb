@@ -3,30 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aprenda sobre as Leis de Newton com exemplos práticos e simuladores interativos. Aula de Física - Mecânica Clássica.">
+    <meta name="keywords" content="física, leis de newton, mecânica clássica, educação, Isaac Newton">
+    <meta name="author" content="Wilnner Luka">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Aula de Física - Leis de Newton</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header>
-             <img src="image.png">
+            <figure>
+                <img src="image.png" alt="Logo das Leis de Newton - Símbolo de Física">
+                <figcaption>Logo do projeto educativo sobre as Leis de Newton</figcaption>
+            </figure>
             <h1>🔬 Leis de Newton</h1>
             <p class="subtitle">Aula de Física - Mecânica Clássica</p>
         </header>
 
+        <nav class="menu">
+            <ul>
+                <li><a href="#introducao">Introdução</a></li>
+                <li><a href="#primeira-lei">1ª Lei</a></li>
+                <li><a href="#segunda-lei">2ª Lei</a></li>
+                <li><a href="#terceira-lei">3ª Lei</a></li>
+                <li><a href="#resumo">Resumo</a></li>
+                <li><a href="#exercicios">Exercícios</a></li>
+            </ul>
+        </nav>
+
         <main>
             <!-- Introdução -->
-            <section id="introducao" class="section">
+            <article id="introducao" class="section">
                 <h2>📚 Introdução</h2>
-                <p>As três leis de Newton são princípios fundamentais da mecânica clássica que descrevem o movimento dos corpos sob a ação de forças. Formuladas por <strong>Isaac Newton</strong> em 1687, no livro <em>Princípios Matemáticos da Filosofia Natural</em>.</p>
+                <p>As três leis de Newton são princípios fundamentais da mecânica clássica que descrevem o movimento dos corpos sob a ação de forças. Formuladas por <strong>Isaac Newton</strong> no século XVII, estas leis revolucionaram o entendimento da física.</p>
                 <p>Elas formam a base para entender como os objetos se movem no nosso dia a dia.</p>
-            </section>
+            </article>
 
             <!-- Primeira Lei -->
-            <section id="primeira-lei" class="section lei-card">
+            <article id="primeira-lei" class="section lei-card">
                 <h2>🥇 1ª Lei de Newton - Lei da Inércia</h2>
                 <div class="lei-conteudo">
-                    <p class="lei-definicao"><strong>Definição:</strong> Um corpo em repouso permanece em repouso, e um corpo em movimento continua em movimento com velocidade constante, exceto se for forçado por uma força externa não equilibrada.</p>
+                    <p class="lei-definicao"><strong>Definição:</strong> Um corpo em repouso permanece em repouso, e um corpo em movimento continua em movimento com velocidade constante, exceto se uma força resultante agir sobre ele.</p>
                     
                     <div class="formula">
                         <p>Quando a força resultante é nula:</p>
@@ -50,10 +68,10 @@
                         <p id="resultado-inercia" class="resultado"></p>
                     </div>
                 </div>
-            </section>
+            </article>
 
             <!-- Segunda Lei -->
-            <section id="segunda-lei" class="section lei-card">
+            <article id="segunda-lei" class="section lei-card">
                 <h2>🥈 2ª Lei de Newton - Lei Fundamental da Dinâmica</h2>
                 <div class="lei-conteudo">
                     <p class="lei-definicao"><strong>Definição:</strong> A força resultante aplicada a um corpo é igual ao produto da sua massa pela aceleração produzida.</p>
@@ -88,10 +106,10 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </article>
 
             <!-- Terceira Lei -->
-            <section id="terceira-lei" class="section lei-card">
+            <article id="terceira-lei" class="section lei-card">
                 <h2>🥉 3ª Lei de Newton - Lei Ação-Reação</h2>
                 <div class="lei-conteudo">
                     <p class="lei-definicao"><strong>Definição:</strong> Para toda força de ação, existe uma força de reação de mesma intensidade, mesma direção, mas sentido oposto.</p>
@@ -122,10 +140,10 @@
                         <p id="resultado-acao-reação" class="resultado"></p>
                     </div>
                 </div>
-            </section>
+            </article>
 
             <!-- Resumo -->
-            <section id="resumo" class="section">
+            <article id="resumo" class="section">
                 <h2>📝 Resumo das Leis</h2>
                 <table class="tabela-resumo">
                     <thead>
@@ -157,13 +175,13 @@
                         </tr>
                     </tbody>
                 </table>
-            </section>
+            </article>
 
             <!-- Exercícios -->
-            <section id="exercicios" class="section">
+            <article id="exercicios" class="section">
                 <h2>✏️ Exercícios de Prática</h2>
                 <div class="exercicios-container">
-                    <div class="exercico">
+                    <div class="exercicio">
                         <h3>Exercício 1</h3>
                         <p>Um carro de massa 1000 kg acelera a 3 m/s². Qual é a força aplicada?</p>
                         <button class="btn-toggle-resposta" data-exercicio="1">Ver Resposta</button>
@@ -172,16 +190,16 @@
                         </div>
                     </div>
 
-                    <div class="exercico">
+                    <div class="exercicio">
                         <h3>Exercício 2</h3>
                         <p>Por que um passageiro é empurrado para frente quando um carro freia abruptamente?</p>
                         <button class="btn-toggle-resposta" data-exercicio="2">Ver Resposta</button>
                         <div class="resposta" id="resposta-2">
-                            <p><strong>Resposta:</strong> Devido à 1ª Lei de Newton (Inércia). O passageiro permanece em movimento com a mesma velocidade que o carro tinha antes de frear, pois não lhe foi aplicada uma força externa para desacelerar junto com o carro.</p>
+                            <p><strong>Resposta:</strong> Devido à 1ª Lei de Newton (Inércia). O passageiro permanece em movimento com a mesma velocidade que o carro tinha antes de frear, pois nenhuma força o está segurando.</p>
                         </div>
                     </div>
 
-                    <div class="exercico">
+                    <div class="exercicio">
                         <h3>Exercício 3</h3>
                         <p>Se você empurra uma parede com 50 N de força, qual força a parede aplica em você?</p>
                         <button class="btn-toggle-resposta" data-exercicio="3">Ver Resposta</button>
@@ -190,12 +208,15 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </article>
         </main>
 
         <footer>
-            <img src="image.png">
-            <p>📖 Aula de Física - Leis de Newton | Criado por Wilnner Luka com o auxílio do Professor das disciplinas  de Programação WEB ( PHP/Java/MySQL/HTML/CSS) e Lógica de Programação Riva Moreira da E.E Professora Hilda de Araújo Osório Zauza </p>
+            <figure>
+                <img src="image.png" alt="Logo das Leis de Newton - Footer">
+                <figcaption>Logo do projeto educativo</figcaption>
+            </figure>
+            <p>📖 Aula de Física - Leis de Newton | Criado por Wilnner Luka com o auxílio do Professor das disciplinas de Programação WEB (PHP/Java/MySQL/HTML/CSS) e Lógica de Programação</p>
             <p>Isaac Newton (1643-1727) - Cientista britânico</p>
         </footer>
     </div>
