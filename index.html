@@ -11,8 +11,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Skip link: visível ao focar, para navegação por teclado -->
+    <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+
     <div class="container">
-        <header>
+        <header role="banner">
             <figure>
                 <img src="image.png" alt="Logo das Leis de Newton - Símbolo de Física">
                 <figcaption>Logo do projeto educativo sobre as Leis de Newton</figcaption>
@@ -21,7 +24,7 @@
             <p class="subtitle">Aula de Física - Mecânica Clássica</p>
         </header>
 
-        <nav class="menu">
+        <nav class="menu" role="navigation" aria-label="Navegação principal">
             <ul>
                 <li><a href="#introducao">Introdução</a></li>
                 <li><a href="#primeira-lei">1ª Lei</a></li>
@@ -32,11 +35,11 @@
             </ul>
         </nav>
 
-        <main>
+        <main id="main-content" role="main">
             <!-- Introdução -->
             <article id="introducao" class="section">
                 <h2>📚 Introdução</h2>
-                <p>As três leis de Newton são princípios fundamentais da mecânica clássica que descrevem o movimento dos corpos sob a ação de forças. Formuladas por <strong>Isaac Newton</strong> no século XVII, estas leis revolucionaram o entendimento da física.</p>
+                <p>As três leis de Newton são princípios fundamentais da mecânica clássica que descrevem o movimento dos corpos sob a ação de forças. Formuladas por <strong>Isaac Newton</strong>...</p>
                 <p>Elas formam a base para entender como os objetos se movem no nosso dia a dia.</p>
             </article>
 
@@ -44,7 +47,7 @@
             <article id="primeira-lei" class="section lei-card">
                 <h2>🥇 1ª Lei de Newton - Lei da Inércia</h2>
                 <div class="lei-conteudo">
-                    <p class="lei-definicao"><strong>Definição:</strong> Um corpo em repouso permanece em repouso, e um corpo em movimento continua em movimento com velocidade constante, exceto se uma força resultante agir sobre ele.</p>
+                    <p class="lei-definicao"><strong>Definição:</strong> Um corpo em repouso permanece em repouso, e um corpo em movimento continua em movimento com velocidade constante, exceto se uma força atuar sobre ele.</p>
                     
                     <div class="formula">
                         <p>Quando a força resultante é nula:</p>
@@ -61,11 +64,11 @@
                     <div class="interatividade">
                         <h3>💡 Experimento Interativo</h3>
                         <p>Clique no botão para ver o efeito da inércia:</p>
-                        <button id="btn-inercia" class="btn">Simular Inércia</button>
-                        <div id="demo-inercia" class="demo-box">
+                        <button id="btn-inercia" class="btn" aria-haspopup="true">Simular Inércia</button>
+                        <div id="demo-inercia" class="demo-box" aria-hidden="true">
                             <div class="objeto" id="objeto-inercia">⚪</div>
                         </div>
-                        <p id="resultado-inercia" class="resultado"></p>
+                        <p id="resultado-inercia" class="resultado" role="status" aria-live="polite"></p>
                     </div>
                 </div>
             </article>
@@ -91,16 +94,17 @@
 
                     <div class="interatividade">
                         <h3>💡 Calculadora de Força</h3>
-                        <div class="calculadora">
+                        <div class="calculadora" aria-labelledby="calc-title">
+                            <h4 id="calc-title" class="visually-hidden">Calculadora de Força</h4>
                             <label for="massa">Massa (kg):</label>
-                            <input type="number" id="massa" min="0.1" step="0.1" value="10">
+                            <input type="number" id="massa" min="0.1" step="0.1" value="10" aria-label="Massa em quilogramas">
                             
                             <label for="aceleracao">Aceleração (m/s²):</label>
-                            <input type="number" id="aceleracao" min="0.1" step="0.1" value="5">
+                            <input type="number" id="aceleracao" min="0.1" step="0.1" value="5" aria-label="Aceleração em metros por segundo ao quadrado">
                             
                             <button id="btn-calcula-forca" class="btn">Calcular Força</button>
                             
-                            <div id="resultado-forca" class="resultado">
+                            <div id="resultado-forca" class="resultado" role="status" aria-live="polite">
                                 <strong>Força resultante:</strong> <span id="valor-forca">0</span> N
                             </div>
                         </div>
@@ -130,14 +134,14 @@
                     <div class="interatividade">
                         <h3>💡 Simulador Ação-Reação</h3>
                         <p>Clique no botão para ver as forças de ação e reação:</p>
-                        <button id="btn-acao-reação" class="btn">Simular Ação-Reação</button>
-                        <div id="demo-acao-reação" class="demo-box dual">
+                        <button id="btn-acao-reacao" class="btn" aria-haspopup="true">Simular Ação-Reação</button>
+                        <div id="demo-acao-reacao" class="demo-box dual" aria-hidden="true">
                             <div class="objeto" id="objeto1">⬛</div>
                             <div class="objeto" id="objeto2">⬜</div>
-                            <div class="forca-arrow" id="forca1"></div>
-                            <div class="forca-arrow" id="forca2"></div>
+                            <div class="forca-arrow" id="forca1" aria-hidden="true"></div>
+                            <div class="forca-arrow" id="forca2" aria-hidden="true"></div>
                         </div>
-                        <p id="resultado-acao-reação" class="resultado"></p>
+                        <p id="resultado-acao-reacao" class="resultado" role="status" aria-live="polite"></p>
                     </div>
                 </div>
             </article>
@@ -184,8 +188,8 @@
                     <div class="exercicio">
                         <h3>Exercício 1</h3>
                         <p>Um carro de massa 1000 kg acelera a 3 m/s². Qual é a força aplicada?</p>
-                        <button class="btn-toggle-resposta" data-exercicio="1">Ver Resposta</button>
-                        <div class="resposta" id="resposta-1">
+                        <button class="btn-toggle-resposta" data-exercicio="1" aria-expanded="false" aria-controls="resposta-1">Ver Resposta</button>
+                        <div class="resposta" id="resposta-1" aria-hidden="true" role="region">
                             <p><strong>Solução:</strong> F = m · a = 1000 kg × 3 m/s² = <strong>3000 N</strong></p>
                         </div>
                     </div>
@@ -193,17 +197,17 @@
                     <div class="exercicio">
                         <h3>Exercício 2</h3>
                         <p>Por que um passageiro é empurrado para frente quando um carro freia abruptamente?</p>
-                        <button class="btn-toggle-resposta" data-exercicio="2">Ver Resposta</button>
-                        <div class="resposta" id="resposta-2">
-                            <p><strong>Resposta:</strong> Devido à 1ª Lei de Newton (Inércia). O passageiro permanece em movimento com a mesma velocidade que o carro tinha antes de frear, pois nenhuma força o está segurando.</p>
+                        <button class="btn-toggle-resposta" data-exercicio="2" aria-expanded="false" aria-controls="resposta-2">Ver Resposta</button>
+                        <div class="resposta" id="resposta-2" aria-hidden="true" role="region">
+                            <p><strong>Resposta:</strong> Devido à 1ª Lei de Newton (Inércia). O passageiro permanece em movimento com a mesma velocidade que o carro tinha antes de frear, pois nenhum força atuou diretamente sobre ele para reduzir sua velocidade imediatamente.</p>
                         </div>
                     </div>
 
                     <div class="exercicio">
                         <h3>Exercício 3</h3>
                         <p>Se você empurra uma parede com 50 N de força, qual força a parede aplica em você?</p>
-                        <button class="btn-toggle-resposta" data-exercicio="3">Ver Resposta</button>
-                        <div class="resposta" id="resposta-3">
+                        <button class="btn-toggle-resposta" data-exercicio="3" aria-expanded="false" aria-controls="resposta-3">Ver Resposta</button>
+                        <div class="resposta" id="resposta-3" aria-hidden="true" role="region">
                             <p><strong>Resposta:</strong> Devido à 3ª Lei de Newton (Ação-Reação), a parede aplica exatamente <strong>50 N</strong> de força em você, na mesma direção mas em sentido oposto.</p>
                         </div>
                     </div>
@@ -211,16 +215,19 @@
             </article>
         </main>
 
-        <footer>
+        <footer role="contentinfo">
             <figure>
                 <img src="image.png" alt="Logo das Leis de Newton - Footer">
                 <figcaption>Logo do projeto educativo</figcaption>
             </figure>
-            <p>📖 Aula de Física - Leis de Newton | Criado por Wilnner Luka com o auxílio do Professor das disciplinas de Programação WEB (PHP/Java/MySQL/HTML/CSS) e Lógica de Programação Riva Moreira</p>
+            <p>📖 Aula de Física - Leis de Newton | Criado por Wilnner Luka com o auxílio do Professor das disciplinas de Programação WEB (PHP/Java/MySQL/HTML/CSS) e Lógica de Programação.</p>
             <p>Isaac Newton (1643-1727) - Cientista britânico</p>
         </footer>
     </div>
 
-    <script src="script.js"></script>
+    <!-- ARIA live region for announcements -->
+    <div id="site-aria-live" aria-live="polite" aria-atomic="true" class="visually-hidden"></div>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
