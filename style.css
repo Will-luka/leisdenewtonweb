@@ -500,3 +500,152 @@ footer p {
         padding: 10px 15px;
     }
 }
+/* ========================
+   TEMA CLARO
+   ======================== */
+body.tema-claro {
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8d5d5 100%);
+    color: #333;
+}
+
+body.tema-claro .section {
+    background: #ffffff;
+    border: 1px solid #ddd;
+}
+
+body.tema-claro .section:hover {
+    box-shadow: 0 15px 40px rgba(100, 100, 100, 0.2);
+}
+
+body.tema-claro header,
+body.tema-claro .menu,
+body.tema-claro footer {
+    background: #f0f0f0;
+    border: 2px solid #4CAF50;
+}
+
+body.tema-claro header h1 {
+    color: #2196F3;
+}
+
+body.tema-claro .section h2 {
+    color: #2196F3;
+    border-bottom: 3px solid #4CAF50;
+}
+
+body.tema-claro .menu a {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+}
+
+body.tema-claro .menu a:hover {
+    background: linear-gradient(135deg, #45a049 0%, #3d8b40 100%);
+}
+
+body.tema-claro .lei-definicao {
+    background: #e8f5e9;
+    border: 1px solid #4CAF50;
+}
+
+body.tema-claro .formula {
+    background: linear-gradient(135deg, #4CAF50 0%, #388e3c 100%);
+}
+
+/* ========================
+   TEMA ROXO
+   ======================== */
+body.tema-roxo {
+    background: linear-gradient(135deg, #2c3e50 0%, #3d1b4d 100%);
+    color: #e0e0e0;
+}
+
+body.tema-roxo header,
+body.tema-roxo .menu,
+body.tema-roxo footer {
+    background: #1a1a2e;
+    border: 2px solid #9c27b0;
+}
+
+body.tema-roxo header h1 {
+    color: #bb86fc;
+}
+
+body.tema-roxo .section h2 {
+    color: #bb86fc;
+    border-bottom: 3px solid #9c27b0;
+}
+
+body.tema-roxo .menu a {
+    background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+}
+
+body.tema-roxo .menu a:hover {
+    background: linear-gradient(135deg, #bb86fc 0%, #9c27b0 100%);
+}
+
+body.tema-roxo .lei-definicao {
+    background: #3d1b4d;
+    border: 1px solid #9c27b0;
+}
+
+body.tema-roxo .formula {
+    background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+}
+
+/* ========================
+   TEMA AZUL
+   ======================== */
+body.tema-azul {
+    background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+    color: #e0e0e0;
+}
+
+body.tema-azul header,
+body.tema-azul .menu,
+body.tema-azul footer {
+    background: #0d47a1;
+    border: 2px solid #2196F3;
+}
+
+body.tema-azul header h1 {
+    color: #64b5f6;
+}
+
+body.tema-azul .section h2 {
+    color: #64b5f6;
+    border-bottom: 3px solid #2196F3;
+}
+
+body.tema-azul .menu a {
+    background: linear-gradient(135deg, #2196F3 0%, #1976d2 100%);
+}
+
+body.tema-azul .menu a:hover {
+    background: linear-gradient(135deg, #64b5f6 0%, #2196F3 100%);
+}
+
+body.tema-azul .lei-definicao {
+    background: #0d47a1;
+    border: 1px solid #2196F3;
+}
+
+body.tema-azul .formula {
+    background: linear-gradient(135deg, #2196F3 0%, #1565c0 100%);
+}
+
+/* Estilo do botão de tema */
+.btn-tema {
+    background: none;
+    border: 2px solid #e0e0e0;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.8em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-tema:hover {
+    transform: scale(1.1) rotate(15deg);
+    border-color: #FF4444;
+}
