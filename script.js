@@ -254,3 +254,52 @@ function showConfete() {
         confete.remove();
     }, 1100);
 }
+// ========================
+// TEMA - Paleta de Cores
+// ========================
+function initializeTheme() {
+    const btnTema = document.getElementById('btn-tema');
+    
+    if (!btnTema) return;
+    
+    // Recuperar tema salvo do localStorage
+    const temaSalvo = localStorage.getItem('tema-newton') || 'tema-padrão';
+    aplicarTema(temaSalvo);
+    
+    // Ciclar entre temas ao clicar
+    const temas = ['tema-padrão', 'tema-claro', 'tema-roxo', 'tema-azul'];
+    let indiceAtual = temas.indexOf(temaSalvo);
+    
+    btnTema.addEventListener('click', function() {
+        indiceAtual = (indiceAtual + 1) % temas.length;
+        const novoTema = temas[indiceAtual];
+        aplicarTema(novoTema);
+        localStorage.setItem('tema-newton', novoTema);
+        
+        // Feedback visual
+        btnTema.style.transform = 'rotate(360deg)';
+        setTimeout(() => {
+            btnTema.style.transform = 'rotate(0deg)';
+        }, 500);
+    });
+}
+
+function aplicarTema(tema) {
+    const body = document.body;
+    
+    // Remover todas as classes de tema
+    body.classList.remove('tema-padrão', 'tema-claro', 'tema-roxo', 'tema-azul');
+    
+    // Adicionar novo tema
+    body.classList.add(tema);
+}
+
+// Chamar na inicialização
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🔬 Aula de Leis de Newton carregada!');
+    initializeTheme();  // ← ADICIONE ESTA LINHA
+    initializeInercia();
+    initializeCalculadoraForca();
+    initializeAcaoReacao();
+    initializeExercicios();
+});
