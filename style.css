@@ -7,8 +7,8 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #333;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d0000 100%);
+    color: #e0e0e0;
     line-height: 1.6;
     min-height: 100vh;
 }
@@ -22,34 +22,35 @@ body {
 /* Header */
 header {
     text-align: center;
-    background: white;
+    background: #1a1a1a;
     padding: 40px 20px;
     margin-bottom: 30px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 2px solid #DC143C;
 }
 
 header h1 {
     font-size: 3em;
-    color: #667eea;
+    color: #FF4444;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .subtitle {
     font-size: 1.3em;
-    color: #666;
+    color: #b0b0b0;
     font-style: italic;
 }
 
 /* Menu de Navegação - CAIXA MELHORADA */
 .menu {
-    background: white;
+    background: #1a1a1a;
     padding: 20px;
     margin-bottom: 30px;
     border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-    border: 2px solid #667eea;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    border: 2px solid #DC143C;
 }
 
 .menu ul {
@@ -72,19 +73,19 @@ header h1 {
 .menu a {
     display: inline-block;
     padding: 10px 25px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);
     color: white;
     text-decoration: none;
     border-radius: 8px;
     font-weight: 600;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.4);
 }
 
 .menu a:hover {
-    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    background: linear-gradient(135deg, #FF4444 0%, #DC143C 100%);
     transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(102, 126, 234, 0.5);
+    box-shadow: 0 6px 18px rgba(220, 20, 60, 0.6);
 }
 
 .menu a:active {
@@ -93,36 +94,38 @@ header h1 {
 
 /* Sections */
 .section {
-    background: white;
+    background: #1a1a1a;
     padding: 30px;
     margin-bottom: 30px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #333;
 }
 
 .section:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 40px rgba(220, 20, 60, 0.2);
+    border: 1px solid #DC143C;
 }
 
 .section h2 {
-    color: #667eea;
+    color: #FF4444;
     font-size: 2em;
     margin-bottom: 20px;
-    border-bottom: 3px solid #667eea;
+    border-bottom: 3px solid #DC143C;
     padding-bottom: 10px;
 }
 
 .section h3 {
-    color: #764ba2;
+    color: #FF6666;
     font-size: 1.4em;
     margin: 20px 0 10px;
 }
 
 /* Lei Card */
 .lei-card {
-    border-left: 5px solid #667eea;
+    border-left: 5px solid #DC143C;
 }
 
 .lei-conteudo {
@@ -130,16 +133,18 @@ header h1 {
 }
 
 .lei-definicao {
-    background: #f8f9ff;
+    background: #2d0000;
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 20px;
     font-size: 1.1em;
+    color: #e0e0e0;
+    border: 1px solid #DC143C;
 }
 
 /* Fórmulas */
 .formula {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);
     color: white;
     padding: 20px;
     margin: 20px 0;
@@ -148,7 +153,7 @@ header h1 {
 }
 
 .formula.principal {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background: linear-gradient(135deg, #FF4444 0%, #DC143C 100%);
 }
 
 .formula span {
@@ -176,32 +181,35 @@ ul li {
     padding-left: 30px;
     position: relative;
     font-size: 1.05em;
+    color: #e0e0e0;
 }
 
 ul li::before {
     content: "✓";
     position: absolute;
     left: 0;
-    color: #667eea;
+    color: #FF4444;
     font-weight: bold;
 }
 
 /* Interatividade */
 .interatividade {
-    background: #f0f3ff;
+    background: #2d0000;
     padding: 20px;
     margin: 20px 0;
     border-radius: 10px;
-    border: 2px solid #667eea;
+    border: 2px solid #DC143C;
+    color: #e0e0e0;
 }
 
 .interatividade h3 {
     margin-top: 0;
+    color: #FF6666;
 }
 
 /* Botões */
 .btn {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);
     color: white;
     padding: 12px 30px;
     border: none;
@@ -210,13 +218,13 @@ ul li::before {
     cursor: pointer;
     margin: 10px 5px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.5);
 }
 
 .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
-    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    box-shadow: 0 6px 20px rgba(220, 20, 60, 0.7);
+    background: linear-gradient(135deg, #FF4444 0%, #DC143C 100%);
 }
 
 .btn:active {
@@ -225,52 +233,57 @@ ul li::before {
 
 /* Calculadora */
 .calculadora {
-    background: white;
+    background: #1a1a1a;
     padding: 20px;
     border-radius: 10px;
     margin: 15px 0;
+    border: 1px solid #333;
 }
 
 .calculadora label {
     display: block;
     margin: 10px 0 5px;
     font-weight: bold;
-    color: #667eea;
+    color: #FF6666;
 }
 
 .calculadora input {
     width: 100%;
     padding: 10px;
-    border: 2px solid #ddd;
+    border: 2px solid #444;
     border-radius: 5px;
     font-size: 1em;
+    background: #2a2a2a;
+    color: #e0e0e0;
     transition: border-color 0.3s ease;
 }
 
 .calculadora input:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: #DC143C;
+    background: #333;
 }
 
 /* Resultados */
 .resultado {
-    background: #e8f0fe;
+    background: #2d0000;
     padding: 15px;
     margin: 15px 0;
     border-radius: 8px;
-    border-left: 4px solid #667eea;
+    border-left: 4px solid #DC143C;
     font-weight: bold;
+    color: #FF6666;
 }
 
 /* Demo Box */
 .demo-box {
-    background: white;
+    background: #2a2a2a;
     height: 120px;
     margin: 15px 0;
     border-radius: 8px;
     position: relative;
     overflow: hidden;
-    border: 2px solid #ddd;
+    border: 2px solid #444;
 }
 
 .demo-box.dual {
@@ -302,7 +315,7 @@ ul li::before {
 .forca-arrow {
     position: absolute;
     height: 3px;
-    background: #f5576c;
+    background: #FF4444;
     transition: all 0.5s ease;
 }
 
@@ -323,13 +336,13 @@ ul li::before {
     width: 100%;
     margin: 20px 0;
     border-collapse: collapse;
-    background: white;
+    background: #1a1a1a;
     border-radius: 10px;
     overflow: hidden;
 }
 
 .tabela-resumo th {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);
     color: white;
     padding: 15px;
     text-align: left;
@@ -338,11 +351,12 @@ ul li::before {
 
 .tabela-resumo td {
     padding: 12px 15px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #333;
+    color: #e0e0e0;
 }
 
 .tabela-resumo tr:hover {
-    background: #f8f9ff;
+    background: #2d0000;
 }
 
 /* Exercícios */
@@ -352,14 +366,15 @@ ul li::before {
 }
 
 .exercico {
-    background: #f8f9ff;
+    background: #2d0000;
     padding: 20px;
     border-radius: 10px;
-    border: 2px solid #e0e0e0;
+    border: 2px solid #DC143C;
+    color: #e0e0e0;
 }
 
 .exercico h3 {
-    color: #667eea;
+    color: #FF6666;
     margin-bottom: 10px;
 }
 
@@ -369,7 +384,7 @@ ul li::before {
 }
 
 .btn-toggle-resposta {
-    background: #667eea;
+    background: #DC143C;
     color: white;
     padding: 8px 20px;
     border: none;
@@ -380,16 +395,17 @@ ul li::before {
 }
 
 .btn-toggle-resposta:hover {
-    background: #6cda06;
+    background: #FF4444;
 }
 
 .resposta {
     display: none;
-    background: rgb(83, 230, 139);
+    background: #1a4d1a;
     padding: 15px;
     margin: 10px 0;
     border-radius: 8px;
-    border-left: 4px solid #764ba2;
+    border-left: 4px solid #4CAF50;
+    color: #90EE90;
 }
 
 .resposta.show {
@@ -398,13 +414,14 @@ ul li::before {
 
 /* Footer */
 footer {
-    background: white;
+    background: #1a1a1a;
     text-align: center;
     padding: 30px;
     margin-top: 40px;
     border-radius: 15px;
-    color: #666;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    color: #b0b0b0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 2px solid #DC143C;
 }
 
 footer p {
