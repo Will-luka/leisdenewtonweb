@@ -1,651 +1,176 @@
 /* Reset e configurações gerais */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove espaçamentos padrão */
+    box-sizing: border-box; /* Inclui borda e padding no cálculo do tamanho */
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d0000 100%);
-    color: #e0e0e0;
-    line-height: 1.6;
-    min-height: 100vh;
-    transition: background 0.5s ease, color 0.5s ease; /* ← ADICIONE ISTO */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Define a fonte */
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d0000 100%); /* Fundo em gradiente */
+    color: #e0e0e0; /* Cor do texto */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    min-height: 100vh; /* Garante altura mínima igual à tela */
+    transition: background 0.5s ease, color 0.5s ease; /* Transição suave entre temas */
 }
+
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 1200px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza */
+    padding: 20px; /* Espaçamento interno */
 }
 
 /* Header */
 header {
-    text-align: center;
-    background: #1a1a1a;
-    padding: 40px 20px;
-    margin-bottom: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border: 2px solid #DC143C;
+    text-align: center; /* Centraliza o texto */
+    background: #1a1a1a; /* Fundo escuro */
+    padding: 40px 20px; /* Espaçamento interno */
+    margin-bottom: 30px; /* Espaço abaixo */
+    border-radius: 15px; /* Bordas arredondadas */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra */
+    border: 2px solid #DC143C; /* Borda vermelha */
 }
 
 header h1 {
-    font-size: 3em;
-    color: #FF4444;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 3em; /* Tamanho do título */
+    color: #FF4444; /* Cor do título */
+    margin-bottom: 10px; /* Espaço abaixo */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra no texto */
 }
 
 .subtitle {
-    font-size: 1.3em;
-    color: #b0b0b0;
-    font-style: italic;
+    font-size: 1.3em; /* Tamanho do subtítulo */
+    color: #b0b0b0; /* Cor mais suave */
+    font-style: italic; /* Itálico */
 }
 
-/* Menu de Navegação - CAIXA MELHORADA */
+/* Menu de Navegação */
 .menu {
-    background: #1a1a1a;
-    padding: 20px;
-    margin-bottom: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-    border: 2px solid #DC143C;
+    background: #1a1a1a; /* Fundo do menu */
+    padding: 20px; /* Espaço interno */
+    margin-bottom: 30px; /* Espaço inferior */
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); /* Sombra */
+    border: 2px solid #DC143C; /* Borda vermelha */
 }
 
 .menu ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    padding: 0;
+    list-style: none; /* Remove marcadores */
+    display: flex; /* Coloca itens lado a lado */
+    flex-wrap: wrap; /* Permite quebrar linha */
+    justify-content: center; /* Centraliza os itens */
+    gap: 15px; /* Espaço entre links */
+    padding: 0; /* Remove padding */
 }
 
 .menu li {
-    padding: 0;
+    padding: 0; /* Remove padding */
 }
 
 .menu li::before {
-    content: "";
+    content: ""; /* Remove marcador visual */
 }
 
 .menu a {
-    display: inline-block;
-    padding: 10px 25px;
-    background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.4);
+    display: inline-block; /* Permite padding e transformação */
+    padding: 10px 25px; /* Espaço interno */
+    background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%); /* Fundo gradiente */
+    color: white; /* Cor do texto */
+    text-decoration: none; /* Remove sublinhado */
+    border-radius: 8px; /* Bordas arredondadas */
+    font-weight: 600; /* Texto em negrito */
+    transition: all 0.3s ease; /* Animação suave */
+    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.4); /* Sombra */
 }
 
 .menu a:hover {
-    background: linear-gradient(135deg, #FF4444 0%, #DC143C 100%);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(220, 20, 60, 0.6);
+    background: linear-gradient(135deg, #FF4444 0%, #DC143C 100%); /* Fundo ao passar o mouse */
+    transform: translateY(-3px); /* Elevação visual */
+    box-shadow: 0 6px 18px rgba(220, 20, 60, 0.6); /* Sombra maior */
 }
 
 .menu a:active {
-    transform: translateY(-1px);
+    transform: translateY(-1px); /* Efeito ao clicar */
 }
 
 /* Sections */
 .section {
-    background: #1a1a1a;
-    padding: 30px;
-    margin-bottom: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #333;
+    background: #1a1a1a; /* Fundo da seção */
+    padding: 30px; /* Espaço interno */
+    margin-bottom: 30px; /* Espaço externo */
+    border-radius: 15px; /* Bordas arredondadas */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Sombra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição */
+    border: 1px solid #333; /* Borda sutil */
 }
 
 .section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(220, 20, 60, 0.2);
-    border: 1px solid #DC143C;
+    transform: translateY(-5px); /* Levanta a seção */
+    box-shadow: 0 15px 40px rgba(220, 20, 60, 0.2); /* Sombra maior */
+    border: 1px solid #DC143C; /* Borda vermelha no hover */
 }
 
 .section h2 {
-    color: #FF4444;
-    font-size: 2em;
-    margin-bottom: 20px;
-    border-bottom: 3px solid #DC143C;
-    padding-bottom: 10px;
+    color: #FF4444; /* Cor do título */
+    font-size: 2em; /* Tamanho */
+    margin-bottom: 20px; /* Espaço abaixo */
+    border-bottom: 3px solid #DC143C; /* Linha inferior */
+    padding-bottom: 10px; /* Espaço abaixo da linha */
 }
 
 .section h3 {
-    color: #FF6666;
-    font-size: 1.4em;
-    margin: 20px 0 10px;
+    color: #FF6666; /* Cor dos subtítulos */
+    font-size: 1.4em; /* Tamanho */
+    margin: 20px 0 10px; /* Margens */
 }
 
 /* Lei Card */
 .lei-card {
-    border-left: 5px solid #DC143C;
+    border-left: 5px solid #DC143C; /* Destaque lateral */
 }
 
 .lei-conteudo {
-    padding: 10px;
+    padding: 10px; /* Espaçamento interno */
 }
 
 .lei-definicao {
-    background: #2d0000;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    font-size: 1.1em;
-    color: #e0e0e0;
-    border: 1px solid #DC143C;
+    background: #2d0000; /* Fundo escuro avermelhado */
+    padding: 15px; /* Espaçamento interno */
+    border-radius: 8px; /* Bordas arredondadas */
+    margin-bottom: 20px; /* Espaço inferior */
+    font-size: 1.1em; /* Tamanho do texto */
+    color: #e0e0e0; /* Cor do texto */
+    border: 1px solid #DC143C; /* Borda vermelha */
 }
 
 /* Fórmulas */
 .formula {
-    background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);
-    color: white;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 10px;
-    text-align: center;
+    background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%); /* Fundo da fórmula */
+    color: white; /* Texto branco */
+    padding: 20px; /* Espaço interno */
+    margin: 20px 0; /* Margem vertical */
+    border-radius: 10px; /* Bordas arredondadas */
+    text-align: center; /* Centraliza */
 }
 
 .formula.principal {
-    background: linear-gradient(135deg, #FF4444 0%, #DC143C 100%);
+    background: linear-gradient(135deg, #FF4444 0%, #DC143C 100%); /* Destaque principal */
 }
 
 .formula span {
-    font-size: 1.8em;
-    font-weight: bold;
-    display: block;
-    margin: 10px 0;
-    font-family: 'Courier New', monospace;
+    font-size: 1.8em; /* Tamanho maior */
+    font-weight: bold; /* Negrito */
+    display: block; /* Ocupa linha inteira */
+    margin: 10px 0; /* Espaço acima e abaixo */
+    font-family: 'Courier New', monospace; /* Fonte monoespaçada */
 }
 
 .formula .nota {
-    font-size: 0.9em;
-    margin-top: 10px;
-    opacity: 0.9;
+    font-size: 0.9em; /* Tamanho menor */
+    margin-top: 10px; /* Espaço acima */
+    opacity: 0.9; /* Leve transparência */
 }
 
 /* Listas */
 ul {
-    list-style: none;
-    padding-left: 10px;
-}
-
-ul li {
-    padding: 8px 0;
-    padding-left: 30px;
-    position: relative;
-    font-size: 1.05em;
-    color: #e0e0e0;
-}
-
-ul li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #FF4444;
-    font-weight: bold;
-}
-
-/* Interatividade */
-.interatividade {
-    background: #2d0000;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 10px;
-    border: 2px solid #DC143C;
-    color: #e0e0e0;
-}
-
-.interatividade h3 {
-    margin-top: 0;
-    color: #FF6666;
-}
-
-/* Botões */
-.btn {
-    background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);
-    color: white;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1em;
-    cursor: pointer;
-    margin: 10px 5px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.5);
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(220, 20, 60, 0.7);
-    background: linear-gradient(135deg, #FF4444 0%, #DC143C 100%);
-}
-
-.btn:active {
-    transform: translateY(0);
-}
-
-/* Calculadora */
-.calculadora {
-    background: #1a1a1a;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 15px 0;
-    border: 1px solid #333;
-}
-
-.calculadora label {
-    display: block;
-    margin: 10px 0 5px;
-    font-weight: bold;
-    color: #FF6666;
-}
-
-.calculadora input {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #444;
-    border-radius: 5px;
-    font-size: 1em;
-    background: #2a2a2a;
-    color: #e0e0e0;
-    transition: border-color 0.3s ease;
-}
-
-.calculadora input:focus {
-    outline: none;
-    border-color: #DC143C;
-    background: #333;
-}
-
-/* Resultados */
-.resultado {
-    background: #2d0000;
-    padding: 15px;
-    margin: 15px 0;
-    border-radius: 8px;
-    border-left: 4px solid #DC143C;
-    font-weight: bold;
-    color: #FF6666;
-}
-
-/* Demo Box */
-.demo-box {
-    background: #2a2a2a;
-    height: 120px;
-    margin: 15px 0;
-    border-radius: 8px;
-    position: relative;
-    overflow: hidden;
-    border: 2px solid #444;
-}
-
-.demo-box.dual {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.objeto {
-    font-size: 3em;
-    position: absolute;
-    transition: all 0.5s ease;
-}
-
-.objeto#objeto-inercia {
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.objeto#objeto1 {
-    left: 30%;
-}
-
-.objeto#objeto2 {
-    right: 30%;
-}
-
-.forca-arrow {
-    position: absolute;
-    height: 3px;
-    background: #FF4444;
-    transition: all 0.5s ease;
-}
-
-#forca1 {
-    width: 60px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-#forca2 {
-    width: 60px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-/* Tabela */
-.tabela-resumo {
-    width: 100%;
-    margin: 20px 0;
-    border-collapse: collapse;
-    background: #1a1a1a;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.tabela-resumo th {
-    background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);
-    color: white;
-    padding: 15px;
-    text-align: left;
-    font-weight: bold;
-}
-
-.tabela-resumo td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #333;
-    color: #e0e0e0;
-}
-
-.tabela-resumo tr:hover {
-    background: #2d0000;
-}
-
-/* Exercícios */
-.exercicios-container {
-    display: grid;
-    gap: 20px;
-}
-
-.exercico {
-    background: #2d0000;
-    padding: 20px;
-    border-radius: 10px;
-    border: 2px solid #DC143C;
-    color: #e0e0e0;
-}
-
-.exercico h3 {
-    color: #FF6666;
-    margin-bottom: 10px;
-}
-
-.exercico p {
-    margin: 10px 0;
-    font-size: 1.05em;
-}
-
-.btn-toggle-resposta {
-    background: #DC143C;
-    color: white;
-    padding: 8px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 10px 0;
-    transition: background 0.3s ease;
-}
-
-.btn-toggle-resposta:hover {
-    background: #FF4444;
-}
-
-.resposta {
-    display: none;
-    background: #1a4d1a;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 8px;
-    border-left: 4px solid #4CAF50;
-    color: #90EE90;
-}
-
-.resposta.show {
-    display: block;
-}
-
-/* Footer */
-footer {
-    background: #1a1a1a;
-    text-align: center;
-    padding: 30px;
-    margin-top: 40px;
-    border-radius: 15px;
-    color: #b0b0b0;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border: 2px solid #DC143C;
-}
-
-footer p {
-    margin: 5px 0;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2em;
-    }
-    
-    .section {
-        padding: 20px;
-    }
-    
-    .section h2 {
-        font-size: 1.5em;
-    }
-    
-    .formula span {
-        font-size: 1.3em;
-    }
-    
-    .tabela-resumo {
-        font-size: 0.9em;
-    }
-    
-    .tabela-resumo th,
-    .tabela-resumo td {
-        padding: 10px;
-    }
-
-    /* Menu responsivo */
-    .menu {
-        padding: 15px;
-    }
-
-    .menu ul {
-        gap: 10px;
-    }
-
-    .menu a {
-        padding: 8px 15px;
-        font-size: 0.95em;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 10px;
-    }
-    
-    header {
-        padding: 20px 10px;
-    }
-    
-    .btn {
-        padding: 10px 20px;
-        font-size: 1em;
-    }
-
-    /* Menu responsivo mobile */
-    .menu {
-        padding: 10px;
-    }
-
-    .menu ul {
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .menu a {
-        width: 100%;
-        text-align: center;
-        padding: 10px 15px;
-    }
-}
-/* ========================
-   TEMA CLARO
-   ======================== */
-body.tema-claro {
-    background: linear-gradient(135deg, #f5f5f5 0%, #e8d5d5 100%);
-    color: #333;
-}
-
-body.tema-claro .section {
-    background: #ffffff;
-    border: 1px solid #ddd;
-}
-
-body.tema-claro .section:hover {
-    box-shadow: 0 15px 40px rgba(100, 100, 100, 0.2);
-}
-
-body.tema-claro header,
-body.tema-claro .menu,
-body.tema-claro footer {
-    background: #f0f0f0;
-    border: 2px solid #4CAF50;
-}
-
-body.tema-claro header h1 {
-    color: #2196F3;
-}
-
-body.tema-claro .section h2 {
-    color: #2196F3;
-    border-bottom: 3px solid #4CAF50;
-}
-
-body.tema-claro .menu a {
-    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
-}
-
-body.tema-claro .menu a:hover {
-    background: linear-gradient(135deg, #45a049 0%, #3d8b40 100%);
-}
-
-body.tema-claro .lei-definicao {
-    background: #e8f5e9;
-    border: 1px solid #4CAF50;
-}
-
-body.tema-claro .formula {
-    background: linear-gradient(135deg, #4CAF50 0%, #388e3c 100%);
-}
-
-/* ========================
-   TEMA ROXO
-   ======================== */
-body.tema-roxo {
-    background: linear-gradient(135deg, #2c3e50 0%, #3d1b4d 100%);
-    color: #e0e0e0;
-}
-
-body.tema-roxo header,
-body.tema-roxo .menu,
-body.tema-roxo footer {
-    background: #1a1a2e;
-    border: 2px solid #9c27b0;
-}
-
-body.tema-roxo header h1 {
-    color: #bb86fc;
-}
-
-body.tema-roxo .section h2 {
-    color: #bb86fc;
-    border-bottom: 3px solid #9c27b0;
-}
-
-body.tema-roxo .menu a {
-    background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
-}
-
-body.tema-roxo .menu a:hover {
-    background: linear-gradient(135deg, #bb86fc 0%, #9c27b0 100%);
-}
-
-body.tema-roxo .lei-definicao {
-    background: #3d1b4d;
-    border: 1px solid #9c27b0;
-}
-
-body.tema-roxo .formula {
-    background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
-}
-
-/* ========================
-   TEMA AZUL
-   ======================== */
-body.tema-azul {
-    background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
-    color: #e0e0e0;
-}
-
-body.tema-azul header,
-body.tema-azul .menu,
-body.tema-azul footer {
-    background: #0d47a1;
-    border: 2px solid #2196F3;
-}
-
-body.tema-azul header h1 {
-    color: #64b5f6;
-}
-
-body.tema-azul .section h2 {
-    color: #64b5f6;
-    border-bottom: 3px solid #2196F3;
-}
-
-body.tema-azul .menu a {
-    background: linear-gradient(135deg, #2196F3 0%, #1976d2 100%);
-}
-
-body.tema-azul .menu a:hover {
-    background: linear-gradient(135deg, #64b5f6 0%, #2196F3 100%);
-}
-
-body.tema-azul .lei-definicao {
-    background: #0d47a1;
-    border: 1px solid #2196F3;
-}
-
-body.tema-azul .formula {
-    background: linear-gradient(135deg, #2196F3 0%, #1565c0 100%);
-}
-
-/* Estilo do botão de tema */
-.btn-tema {
-    background: none;
-    border: 2px solid #e0e0e0;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 1.8em;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-.btn-tema:hover {
-    transform: scale(1.1) rotate(15deg);
-    border-color: #FF4444;
-}
+    list-style: none; /* 
