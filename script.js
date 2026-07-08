@@ -87,7 +87,11 @@ function initializeAcaoReacao() {
     const forca2 = document.getElementById('forca2');
     const resultado = document.getElementById('resultado-acao-reacao');
     
-    if (!btnAcaoReacao) return;
+    // Validar todos os elementos necessários
+    if (!btnAcaoReacao || !objeto1 || !objeto2 || !forca1 || !forca2 || !resultado) {
+        console.warn('Elementos do simulador de ação-reação não encontrados');
+        return;
+    }
     
     btnAcaoReacao.addEventListener('click', function() {
         // Mostrar forças de ação e reação
@@ -96,12 +100,14 @@ function initializeAcaoReacao() {
         forca1.innerHTML = '→';
         forca1.style.fontSize = '2em';
         forca1.style.color = '#f5576c';
+        forca1.style.display = 'block';
         
         forca2.style.right = '30%';
         forca2.style.background = '#667eea';
         forca2.innerHTML = '←';
         forca2.style.fontSize = '2em';
         forca2.style.color = '#667eea';
+        forca2.style.display = 'block';
         
         // Movimento dos objetos
         objeto1.style.left = '20%';
@@ -110,13 +116,16 @@ function initializeAcaoReacao() {
         resultado.innerHTML = '✅ Ação e Reação! Quando o objeto 1 empurra o objeto 2 (ação), o objeto 2 empurra o objeto 1 com mesma força mas sentido oposto (reação).';
         resultado.style.background = '#d4edda';
         resultado.style.borderLeft = '4px solid #28a745';
+        resultado.style.display = 'block';
         
         // Resetar após 3 segundos
         setTimeout(() => {
             forca1.style.left = '0';
             forca1.innerHTML = '';
+            forca1.style.display = 'none';
             forca2.style.right = '0';
             forca2.innerHTML = '';
+            forca2.style.display = 'none';
             objeto1.style.left = '30%';
             objeto2.style.right = '30%';
             resultado.innerHTML = '';
