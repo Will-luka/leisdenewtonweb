@@ -1,176 +1,153 @@
-/* Reset e configurações gerais */
-* {
-    margin: 0; /* Remove margens padrão */
-    padding: 0; /* Remove espaçamentos padrão */
-    box-sizing: border-box; /* Inclui borda e padding no cálculo do tamanho */
+text-align: center;
+padding: 10px 15px;
+}
+}
+/* ========================
+   TEMA CLARO
+   ======================== */
+body.tema-claro {
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8d5d5 100%);
+    color: #333;
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Define a fonte */
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d0000 100%); /* Fundo em gradiente */
-    color: #e0e0e0; /* Cor do texto */
-    line-height: 1.6; /* Espaçamento entre linhas */
-    min-height: 100vh; /* Garante altura mínima igual à tela */
-    transition: background 0.5s ease, color 0.5s ease; /* Transição suave entre temas */
+body.tema-claro .section {
+    background: #ffffff;
+    border: 1px solid #ddd;
 }
 
-.container {
-    max-width: 1200px; /* Largura máxima */
-    margin: 0 auto; /* Centraliza */
-    padding: 20px; /* Espaçamento interno */
+body.tema-claro .section:hover {
+    box-shadow: 0 15px 40px rgba(100, 100, 100, 0.2);
 }
 
-/* Header */
-header {
-    text-align: center; /* Centraliza o texto */
-    background: #1a1a1a; /* Fundo escuro */
-    padding: 40px 20px; /* Espaçamento interno */
-    margin-bottom: 30px; /* Espaço abaixo */
-    border-radius: 15px; /* Bordas arredondadas */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra */
-    border: 2px solid #DC143C; /* Borda vermelha */
+body.tema-claro header,
+body.tema-claro .menu,
+body.tema-claro footer {
+    background: #f0f0f0;
+    border: 2px solid #4CAF50;
 }
 
-header h1 {
-    font-size: 3em; /* Tamanho do título */
-    color: #FF4444; /* Cor do título */
-    margin-bottom: 10px; /* Espaço abaixo */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra no texto */
+body.tema-claro header h1 {
+    color: #2196F3;
 }
 
-.subtitle {
-    font-size: 1.3em; /* Tamanho do subtítulo */
-    color: #b0b0b0; /* Cor mais suave */
-    font-style: italic; /* Itálico */
+body.tema-claro .section h2 {
+    color: #2196F3;
+    border-bottom: 3px solid #4CAF50;
 }
 
-/* Menu de Navegação */
-.menu {
-    background: #1a1a1a; /* Fundo do menu */
-    padding: 20px; /* Espaço interno */
-    margin-bottom: 30px; /* Espaço inferior */
-    border-radius: 12px; /* Bordas arredondadas */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); /* Sombra */
-    border: 2px solid #DC143C; /* Borda vermelha */
+body.tema-claro .menu a {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
 }
 
-.menu ul {
-    list-style: none; /* Remove marcadores */
-    display: flex; /* Coloca itens lado a lado */
-    flex-wrap: wrap; /* Permite quebrar linha */
-    justify-content: center; /* Centraliza os itens */
-    gap: 15px; /* Espaço entre links */
-    padding: 0; /* Remove padding */
+body.tema-claro .menu a:hover {
+    background: linear-gradient(135deg, #45a049 0%, #3d8b40 100%);
 }
 
-.menu li {
-    padding: 0; /* Remove padding */
+body.tema-claro .lei-definicao {
+    background: #e8f5e9;
+    border: 1px solid #4CAF50;
 }
 
-.menu li::before {
-    content: ""; /* Remove marcador visual */
+body.tema-claro .formula {
+    background: linear-gradient(135deg, #4CAF50 0%, #388e3c 100%);
 }
 
-.menu a {
-    display: inline-block; /* Permite padding e transformação */
-    padding: 10px 25px; /* Espaço interno */
-    background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%); /* Fundo gradiente */
-    color: white; /* Cor do texto */
-    text-decoration: none; /* Remove sublinhado */
-    border-radius: 8px; /* Bordas arredondadas */
-    font-weight: 600; /* Texto em negrito */
-    transition: all 0.3s ease; /* Animação suave */
-    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.4); /* Sombra */
+/* ========================
+   TEMA ROXO
+   ======================== */
+body.tema-roxo {
+    background: linear-gradient(135deg, #2c3e50 0%, #3d1b4d 100%);
+    color: #e0e0e0;
 }
 
-.menu a:hover {
-    background: linear-gradient(135deg, #FF4444 0%, #DC143C 100%); /* Fundo ao passar o mouse */
-    transform: translateY(-3px); /* Elevação visual */
-    box-shadow: 0 6px 18px rgba(220, 20, 60, 0.6); /* Sombra maior */
+body.tema-roxo header,
+body.tema-roxo .menu,
+body.tema-roxo footer {
+    background: #1a1a2e;
+    border: 2px solid #9c27b0;
 }
 
-.menu a:active {
-    transform: translateY(-1px); /* Efeito ao clicar */
+body.tema-roxo header h1 {
+    color: #bb86fc;
 }
 
-/* Sections */
-.section {
-    background: #1a1a1a; /* Fundo da seção */
-    padding: 30px; /* Espaço interno */
-    margin-bottom: 30px; /* Espaço externo */
-    border-radius: 15px; /* Bordas arredondadas */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Sombra */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição */
-    border: 1px solid #333; /* Borda sutil */
+body.tema-roxo .section h2 {
+    color: #bb86fc;
+    border-bottom: 3px solid #9c27b0;
 }
 
-.section:hover {
-    transform: translateY(-5px); /* Levanta a seção */
-    box-shadow: 0 15px 40px rgba(220, 20, 60, 0.2); /* Sombra maior */
-    border: 1px solid #DC143C; /* Borda vermelha no hover */
+body.tema-roxo .menu a {
+    background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
 }
 
-.section h2 {
-    color: #FF4444; /* Cor do título */
-    font-size: 2em; /* Tamanho */
-    margin-bottom: 20px; /* Espaço abaixo */
-    border-bottom: 3px solid #DC143C; /* Linha inferior */
-    padding-bottom: 10px; /* Espaço abaixo da linha */
+body.tema-roxo .menu a:hover {
+    background: linear-gradient(135deg, #bb86fc 0%, #9c27b0 100%);
 }
 
-.section h3 {
-    color: #FF6666; /* Cor dos subtítulos */
-    font-size: 1.4em; /* Tamanho */
-    margin: 20px 0 10px; /* Margens */
+body.tema-roxo .lei-definicao {
+    background: #3d1b4d;
+    border: 1px solid #9c27b0;
 }
 
-/* Lei Card */
-.lei-card {
-    border-left: 5px solid #DC143C; /* Destaque lateral */
+body.tema-roxo .formula {
+    background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
 }
 
-.lei-conteudo {
-    padding: 10px; /* Espaçamento interno */
+/* ========================
+   TEMA AZUL
+   ======================== */
+body.tema-azul {
+    background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+    color: #e0e0e0;
 }
 
-.lei-definicao {
-    background: #2d0000; /* Fundo escuro avermelhado */
-    padding: 15px; /* Espaçamento interno */
-    border-radius: 8px; /* Bordas arredondadas */
-    margin-bottom: 20px; /* Espaço inferior */
-    font-size: 1.1em; /* Tamanho do texto */
-    color: #e0e0e0; /* Cor do texto */
-    border: 1px solid #DC143C; /* Borda vermelha */
+body.tema-azul header,
+body.tema-azul .menu,
+body.tema-azul footer {
+    background: #0d47a1;
+    border: 2px solid #2196F3;
 }
 
-/* Fórmulas */
-.formula {
-    background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%); /* Fundo da fórmula */
-    color: white; /* Texto branco */
-    padding: 20px; /* Espaço interno */
-    margin: 20px 0; /* Margem vertical */
-    border-radius: 10px; /* Bordas arredondadas */
-    text-align: center; /* Centraliza */
+body.tema-azul header h1 {
+    color: #64b5f6;
 }
 
-.formula.principal {
-    background: linear-gradient(135deg, #FF4444 0%, #DC143C 100%); /* Destaque principal */
+body.tema-azul .section h2 {
+    color: #64b5f6;
+    border-bottom: 3px solid #2196F3;
 }
 
-.formula span {
-    font-size: 1.8em; /* Tamanho maior */
-    font-weight: bold; /* Negrito */
-    display: block; /* Ocupa linha inteira */
-    margin: 10px 0; /* Espaço acima e abaixo */
-    font-family: 'Courier New', monospace; /* Fonte monoespaçada */
+body.tema-azul .menu a {
+    background: linear-gradient(135deg, #2196F3 0%, #1976d2 100%);
 }
 
-.formula .nota {
-    font-size: 0.9em; /* Tamanho menor */
-    margin-top: 10px; /* Espaço acima */
-    opacity: 0.9; /* Leve transparência */
+body.tema-azul .menu a:hover {
+    background: linear-gradient(135deg, #64b5f6 0%, #2196F3 100%);
 }
 
-/* Listas */
-ul {
-    list-style: none; /* 
+body.tema-azul .lei-definicao {
+    background: #0d47a1;
+    border: 1px solid #2196F3;
+}
+
+body.tema-azul .formula {
+    background: linear-gradient(135deg, #2196F3 0%, #1565c0 100%);
+}
+
+/* Estilo do botão de tema */
+.btn-tema {
+    background: none;
+    border: 2px solid #e0e0e0;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.8em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-tema:hover {
+    transform: scale(1.1) rotate(15deg);
+    border-color: #FF4444;
+}
