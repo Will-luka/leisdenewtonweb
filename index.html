@@ -1,109 +1,319 @@
+<!-- ============================================
+     DECLARAÇÃO HTML - COMEÇAM OS COMENTÁRIOS
+     ============================================ -->
+
+<!-- Define que este é um documento HTML5 -->
 <!DOCTYPE html>
+
+<!-- Elemento raiz do documento - define idioma como português brasileiro -->
 <html lang="pt-BR">
+
+<!-- Seção que contém metadados e configurações da página -->
 <head>
+    <!-- Define a codificação de caracteres como UTF-8 para suportar acentos e caracteres especiais -->
     <meta charset="UTF-8">
+    
+    <!-- Configura a viewport para responsividade em dispositivos móveis -->
+    <!-- width=device-width mantém a largura da página igual à largura do dispositivo -->
+    <!-- initial-scale=1.0 começa com zoom em 100% -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Descrição da página que aparece nos resultados de busca (SEO) -->
     <meta name="description" content="Aprenda sobre as Leis de Newton com exemplos práticos e simuladores interativos. Aula de Física - Mecânica Clássica.">
+    
+    <!-- Palavras-chave para otimização de busca (SEO) -->
     <meta name="keywords" content="física, leis de newton, mecânica clássica, educação, Isaac Newton">
+    
+    <!-- Define o autor da página -->
     <meta name="author" content="Wilnner Luka">
+    
+    <!-- Define o ícone (favicon) que aparece na aba do navegador -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Título da página que aparece na aba do navegador -->
     <title>Aula de Física - Leis de Newton</title>
+    
+    <!-- Importa o arquivo CSS externo que contém todos os estilos da página -->
     <link rel="stylesheet" href="style.css">
 </head>
+
+<!-- Elemento principal do corpo da página - todo conteúdo visível vai aqui -->
 <body>
+    <!-- Container principal que envolve todo o conteúdo - define a largura máxima -->
     <div class="container">
+    
+        <!-- ============================================
+             HEADER - CABEÇALHO PRINCIPAL
+             ============================================ -->
+        
+        <!-- Elemento semântico que marca a seção de cabeçalho -->
+        <!-- role="banner" indica que é o banner principal da página (melhor acessibilidade) -->
         <header role="banner">
+        
+            <!-- Div para organizar o topo do header -->
             <div class="header-top">
+            
+                <!-- Elemento figure para imagem com caption (melhor semântica) -->
                 <figure>
+                    <!-- Logo da página - a imagem do símbolo de física -->
+                    <!-- alt descreve a imagem para acessibilidade (leitores de tela) -->
                     <img src="image.png" alt="Logo das Leis de Newton - Símbolo de Física">
+                    
+                    <!-- Caption descritivo da imagem -->
                     <figcaption>Logo do projeto educativo sobre as Leis de Newton</figcaption>
                 </figure>
+                
+                <!-- Título principal da página com emoji científico -->
                 <h1>🔬 Leis de Newton</h1>
+                
+                <!-- Botão para alternar entre temas (claro, roxo, azul) -->
+                <!-- id="btn-tema" permite identificar o botão via JavaScript -->
+                <!-- aria-label melhora acessibilidade descrevendo a função do botão -->
+                <!-- title mostra um tooltip ao passar o mouse -->
                 <button id="btn-tema" class="btn-tema" aria-label="Alternar paleta de cores" title="Clique para mudar a paleta de cores">🎨</button>
             </div>
+            
+            <!-- Subtítulo da página com classe para estilo diferenciado -->
             <p class="subtitle">Aula de Física - Mecânica Clássica</p>
         </header>
 
+        <!-- ============================================
+             NAVEGAÇÃO - MENU PRINCIPAL
+             ============================================ -->
+        
+        <!-- Elemento nav semântico para navegação -->
+        <!-- role="navigation" explícita o papel para acessibilidade -->
+        <!-- aria-label descreve o propósito da navegação -->
         <nav class="menu" role="navigation" aria-label="Navegação principal">
+        
+            <!-- Lista não ordenada com links de navegação -->
             <ul>
+                <!-- Item de menu linkando para seção de introdução (# indica âncora na mesma página) -->
                 <li><a href="#introducao">Introdução</a></li>
+                
+                <!-- Item de menu linkando para primeira lei -->
                 <li><a href="#primeira-lei">1ª Lei</a></li>
+                
+                <!-- Item de menu linkando para segunda lei -->
                 <li><a href="#segunda-lei">2ª Lei</a></li>
+                
+                <!-- Item de menu linkando para terceira lei -->
                 <li><a href="#terceira-lei">3ª Lei</a></li>
+                
+                <!-- Item de menu linkando para resumo das leis -->
                 <li><a href="#resumo">Resumo</a></li>
             </ul>
         </nav>
 
+        <!-- ============================================
+             CONTEÚDO PRINCIPAL
+             ============================================ -->
+        
+        <!-- Elemento main semântico que marca o conteúdo principal da página -->
+        <!-- id="main-content" permite pular direto para o conteúdo principal (acessibilidade) -->
+        <!-- role="main" marca explicitamente como conteúdo principal -->
         <main id="main-content" role="main">
-            <!-- Introdução -->
+        
+            <!-- ============================================
+                 SEÇÃO: INTRODUÇÃO
+                 ============================================ -->
+            
+            <!-- Article semântico para conteúdo independente e significativo -->
+            <!-- id="introducao" permite ligar via menu e JavaScript -->
+            <!-- class="section" aplica estilos CSS da seção -->
             <article id="introducao" class="section">
+            
+                <!-- Título secundário da seção com emoji de livro -->
                 <h2>📚 Introdução</h2>
-                <p>As três leis de Newton são princípios fundamentais da mecânica clássica que descrevem o movimento dos corpos sob a ação de forças. Formuladas por <strong>Isaac Newton</strong> no século XVII, estas leis são a base da física clássica.</p>
+                
+                <!-- Parágrafo 1 com conteúdo introdutório sobre as leis de Newton -->
+                <!-- strong marca o nome "Isaac Newton" como importante -->
+                <p>As três leis de Newton são princípios fundamentais da mecânica clássica que descrevem o movimento dos corpos sob a ação de forças. Formuladas por <strong>Isaac Newton</strong> no século XVII, elas revolucionaram nossa compreensão do movimento e da força.</p>
+                
+                <!-- Parágrafo 2 conclusivo da introdução -->
                 <p>Elas formam a base para entender como os objetos se movem no nosso dia a dia.</p>
             </article>
 
-            <!-- Primeira Lei -->
+            <!-- ============================================
+                 SEÇÃO: PRIMEIRA LEI - LEI DA INÉRCIA
+                 ============================================ -->
+            
+            <!-- Article para a primeira lei de Newton -->
+            <!-- id="primeira-lei" permite navegação via menu -->
+            <!-- class="section lei-card" aplica estilos especiais para cards de leis -->
             <article id="primeira-lei" class="section lei-card">
+            
+                <!-- Título com emoji de primeiro lugar -->
                 <h2>🥇 1ª Lei de Newton - Lei da Inércia</h2>
+                
+                <!-- Div que contém todo o conteúdo da lei -->
                 <div class="lei-conteudo">
+                
+                    <!-- Parágrafo especial com definição da lei -->
+                    <!-- class="lei-definicao" aplica estilo destacado -->
                     <p class="lei-definicao"><strong>Definição:</strong> Um corpo em repouso permanece em repouso, e um corpo em movimento continua em movimento com velocidade constante, exceto se uma força atuar sobre ele.</p>
                     
+                    <!-- Div que contém a fórmula matemática -->
+                    <!-- class="formula" aplica estilo especial para fórmulas -->
                     <div class="formula">
+                        <!-- Texto explicativo antes da fórmula -->
                         <p>Quando a força resultante é nula:</p>
+                        
+                        <!-- Span com a fórmula matemática em grande destaque -->
                         <span>ΣF = 0 → a = 0 → v = constante</span>
                     </div>
 
+                    <!-- Título para exemplos práticos -->
                     <h3>Exemplos práticos:</h3>
+                    
+                    <!-- Lista de exemplos com emojis para clareza -->
                     <ul>
+                        <!-- Exemplo 1: Carro fazendo curva -->
                         <li>🚗 Quando um carro faz uma curva abrupta, os passageiros são empurrados para o lado exterior</li>
+                        
+                        <!-- Exemplo 2: Bola de futebol parada -->
                         <li>⚽ Uma bola de futebol parada no chão permanece parada até ser chutada</li>
+                        
+                        <!-- Exemplo 3: Objeto em superfície lisa -->
                         <li>🛷 Um objeto deslizando sobre uma superfície perfeitamente lisa continuaria movimentando-se indefinidamente</li>
                     </ul>
 
+                    <!-- ============================================
+                         SEÇÃO INTERATIVA: EXPERIMENTO DE INÉRCIA
+                         ============================================ -->
+                    
+                    <!-- Div para criar uma seção interativa com simulação -->
+                    <!-- class="interatividade" aplica estilo especial para seções interativas -->
                     <div class="interatividade">
+                    
+                        <!-- Título da atividade interativa -->
                         <h3>💡 Experimento Interativo</h3>
+                        
+                        <!-- Texto instruindo o usuário -->
                         <p>Clique no botão para ver o efeito da inércia:</p>
+                        
+                        <!-- Botão para disparar a simulação de inércia via JavaScript -->
+                        <!-- id="btn-inercia" permite identificar e controlar via JS -->
+                        <!-- class="btn" aplica estilo de botão -->
+                        <!-- aria-haspopup indica que há conteúdo relacionado (demo box) -->
                         <button id="btn-inercia" class="btn" aria-haspopup="true">Simular Inércia</button>
+                        
+                        <!-- Caixa que contém a demonstração visual (objeto animado) -->
+                        <!-- id="demo-inercia" permite identificar e animar via JS -->
+                        <!-- class="demo-box" aplica estilo da caixa de demonstração -->
+                        <!-- aria-hidden="true" indica que é visual e será descrito por texto -->
                         <div id="demo-inercia" class="demo-box" aria-hidden="true">
+                            <!-- Elemento que será animado (emoji de círculo) -->
+                            <!-- id="objeto-inercia" permite controlar a animação via JS -->
+                            <!-- class="objeto" aplica estilos do objeto -->
                             <div class="objeto" id="objeto-inercia">⚪</div>
                         </div>
+                        
+                        <!-- Parágrafo para exibir resultado textual da simulação -->
+                        <!-- id="resultado-inercia" permite atualizar o resultado via JS -->
+                        <!-- role="status" indica que é uma região de status para acessibilidade -->
+                        <!-- aria-live="polite" faz leitores de tela anunciarem mudanças -->
                         <p id="resultado-inercia" class="resultado" role="status" aria-live="polite"></p>
                     </div>
                 </div>
             </article>
 
-            <!-- Segunda Lei -->
+            <!-- ============================================
+                 SEÇÃO: SEGUNDA LEI - LEI FUNDAMENTAL DA DINÂMICA
+                 ============================================ -->
+            
+            <!-- Article para a segunda lei de Newton -->
+            <!-- id="segunda-lei" permite navegação via menu -->
             <article id="segunda-lei" class="section lei-card">
+            
+                <!-- Título com emoji de segundo lugar -->
                 <h2>🥈 2ª Lei de Newton - Lei Fundamental da Dinâmica</h2>
+                
+                <!-- Div que contém todo o conteúdo da lei -->
                 <div class="lei-conteudo">
+                
+                    <!-- Parágrafo com definição da segunda lei -->
                     <p class="lei-definicao"><strong>Definição:</strong> A força resultante aplicada a um corpo é igual ao produto da sua massa pela aceleração produzida.</p>
                     
+                    <!-- Div com fórmula principal destacada -->
+                    <!-- class="formula principal" aplica estilo especial para fórmula principal -->
                     <div class="formula principal">
+                        <!-- Texto explicativo -->
                         <p>Forma matemática:</p>
+                        
+                        <!-- Fórmula principal em grande destaque: F = m · a -->
                         <span>F = m · a</span>
+                        
+                        <!-- Nota explicando as variáveis da fórmula -->
+                        <!-- class="nota" aplica estilo menor e mais discreto -->
                         <p class="nota">Onde: F = força (N), m = massa (kg), a = aceleração (m/s²)</p>
                     </div>
 
+                    <!-- Título para exemplos práticos -->
                     <h3>Exemplos práticos:</h3>
+                    
+                    <!-- Lista de exemplos relacionados à segunda lei -->
                     <ul>
+                        <!-- Exemplo 1: Carro pesado vs carro leve -->
                         <li>🚛 Um carro mais pesado (maior massa) precisa de mais força para acelerar na mesma proporção que um carro leve</li>
+                        
+                        <!-- Exemplo 2: Força de um chute -->
                         <li>🏈 Quanto mais forte o chute, maior a aceleração da bola</li>
+                        
+                        <!-- Exemplo 3: Levantar objetos de pesos diferentes -->
                         <li>🏋️ Levantar um objeto pesado exige mais força do que levantar um objeto leve</li>
                     </ul>
 
+                    <!-- ============================================
+                         SEÇÃO INTERATIVA: CALCULADORA DE FORÇA
+                         ============================================ -->
+                    
+                    <!-- Div para a seção interativa de cálculo -->
                     <div class="interatividade">
+                    
+                        <!-- Título da calculadora -->
                         <h3>💡 Calculadora de Força</h3>
+                        
+                        <!-- Div container da calculadora -->
+                        <!-- aria-labelledby links a um título específico para acessibilidade -->
                         <div class="calculadora" aria-labelledby="calc-title">
+                        
+                            <!-- Título oculto visualmente mas disponível para leitores de tela -->
+                            <!-- class="visually-hidden" esconde mas mantém no fluxo de leitura -->
                             <h4 id="calc-title" class="visually-hidden">Calculadora de Força</h4>
+                            
+                            <!-- Label para o campo de massa -->
+                            <!-- for="massa" associa o label ao input com id massa -->
                             <label for="massa">Massa (kg):</label>
+                            
+                            <!-- Campo numérico para entrada de massa -->
+                            <!-- id="massa" permite identificar via JavaScript -->
+                            <!-- type="number" valida automaticamente entradas numéricas -->
+                            <!-- min="0.1" define valor mínimo permitido -->
+                            <!-- step="0.1" define incremento ao clicar setas -->
+                            <!-- value="10" define valor inicial padrão -->
+                            <!-- aria-label descreve para acessibilidade -->
                             <input type="number" id="massa" min="0.1" step="0.1" value="10" aria-label="Massa em quilogramas">
                             
+                            <!-- Label para o campo de aceleração -->
                             <label for="aceleracao">Aceleração (m/s²):</label>
+                            
+                            <!-- Campo numérico para entrada de aceleração -->
+                            <!-- Mesmos atributos que o campo de massa com valores diferentes -->
                             <input type="number" id="aceleracao" min="0.1" step="0.1" value="5" aria-label="Aceleração em metros por segundo ao quadrado">
                             
+                            <!-- Botão para executar o cálculo -->
+                            <!-- id="btn-calcula-forca" permite identificar via JavaScript -->
+                            <!-- class="btn" aplica estilo de botão padrão -->
                             <button id="btn-calcula-forca" class="btn">Calcular Força</button>
                             
+                            <!-- Div que exibe o resultado do cálculo -->
+                            <!-- id="resultado-forca" permite atualizar o resultado via JS -->
+                            <!-- role="status" marca como região de status para acessibilidade -->
+                            <!-- aria-live="polite" anuncia mudanças para leitores de tela -->
                             <div id="resultado-forca" class="resultado" role="status" aria-live="polite">
+                                <!-- Texto e span para exibir o resultado -->
+                                <!-- id="valor-forca" permite atualizar apenas o número via JS -->
                                 <strong>Força resultante:</strong> <span id="valor-forca">0</span> N
                             </div>
                         </div>
@@ -111,93 +321,233 @@
                 </div>
             </article>
 
-            <!-- Terceira Lei -->
+            <!-- ============================================
+                 SEÇÃO: TERCEIRA LEI - LEI AÇÃO-REAÇÃO
+                 ============================================ -->
+            
+            <!-- Article para a terceira lei de Newton -->
+            <!-- id="terceira-lei" permite navegação via menu -->
             <article id="terceira-lei" class="section lei-card">
+            
+                <!-- Título com emoji de terceiro lugar -->
                 <h2>🥉 3ª Lei de Newton - Lei Ação-Reação</h2>
+                
+                <!-- Div que contém todo o conteúdo da lei -->
                 <div class="lei-conteudo">
+                
+                    <!-- Parágrafo com definição da terceira lei -->
                     <p class="lei-definicao"><strong>Definição:</strong> Para toda força de ação, existe uma força de reação de mesma intensidade, mesma direção, mas sentido oposto.</p>
                     
+                    <!-- Div com fórmula matemática da terceira lei -->
                     <div class="formula">
+                        <!-- Texto explicativo -->
                         <p>Forma matemática:</p>
+                        
+                        <!-- Fórmula da ação e reação -->
                         <span>F ação = -F reação</span>
                     </div>
 
+                    <!-- Título para exemplos práticos -->
                     <h3>Exemplos práticos:</h3>
+                    
+                    <!-- Lista de exemplos da terceira lei -->
                     <ul>
+                        <!-- Exemplo 1: Foguete expulsando gases -->
                         <li>🚀 Um rocket expulsa gases para baixo (ação), e os gases empurram o rocket para cima (reação)</li>
+                        
+                        <!-- Exemplo 2: Empurrar parede da piscina -->
                         <li>🏊 Quando você empurra a parede da piscina, a parede empurra você de volta</li>
+                        
+                        <!-- Exemplo 3: Caminhar no chão -->
                         <li>🦶 Para caminhar, você empurra o chão para trás, e o chão empurra você para frente</li>
+                        
+                        <!-- Exemplo 4: Bola quicando no chão -->
                         <li>🏀 Quando uma bola bate no chão, o chão empurra a bola de volta</li>
                     </ul>
 
+                    <!-- ============================================
+                         SEÇÃO INTERATIVA: SIMULADOR AÇÃO-REAÇÃO
+                         ============================================ -->
+                    
+                    <!-- Div para seção interativa de ação-reação -->
                     <div class="interatividade">
+                    
+                        <!-- Título da simulação -->
                         <h3>💡 Simulador Ação-Reação</h3>
+                        
+                        <!-- Texto instruindo o usuário -->
                         <p>Clique no botão para ver as forças de ação e reação:</p>
+                        
+                        <!-- Botão para disparar a simulação -->
+                        <!-- id="btn-acao-reacao" permite identificar via JavaScript -->
+                        <!-- aria-haspopup="true" indica conteúdo relacionado -->
                         <button id="btn-acao-reacao" class="btn" aria-haspopup="true">Simular Ação-Reação</button>
+                        
+                        <!-- Caixa de demonstração com versão "dual" (dois objetos) -->
+                        <!-- id="demo-acao-reacao" permite identificar via JS -->
+                        <!-- class="demo-box dual" aplica estilo especial para demonstração dual -->
+                        <!-- aria-hidden="true" indica conteúdo puramente visual -->
                         <div id="demo-acao-reacao" class="demo-box dual" aria-hidden="true">
+                        
+                            <!-- Primeiro objeto (quadrado preto) representando ação -->
+                            <!-- id="objeto1" permite animar este objeto via JS -->
                             <div class="objeto" id="objeto1">⬛</div>
+                            
+                            <!-- Segundo objeto (quadrado branco) representando reação -->
+                            <!-- id="objeto2" permite animar este objeto via JS -->
                             <div class="objeto" id="objeto2">⬜</div>
+                            
+                            <!-- Seta de força 1 (visualmente representa força de ação) -->
+                            <!-- id="forca1" permite animar e atualizar via JS -->
+                            <!-- aria-hidden="true" pois é elemento puramente visual -->
                             <div class="forca-arrow" id="forca1" aria-hidden="true"></div>
+                            
+                            <!-- Seta de força 2 (visualmente representa força de reação) -->
+                            <!-- id="forca2" permite animar e atualizar via JS -->
                             <div class="forca-arrow" id="forca2" aria-hidden="true"></div>
                         </div>
+                        
+                        <!-- Parágrafo para exibir resultado textual -->
+                        <!-- id="resultado-acao-reacao" permite atualizar via JS -->
+                        <!-- role="status" marca como região de status -->
+                        <!-- aria-live="polite" anuncia mudanças -->
                         <p id="resultado-acao-reacao" class="resultado" role="status" aria-live="polite"></p>
                     </div>
                 </div>
             </article>
 
-            <!-- Resumo -->
+            <!-- ============================================
+                 SEÇÃO: RESUMO DAS LEIS
+                 ============================================ -->
+            
+            <!-- Article com resumo em formato de tabela -->
+            <!-- id="resumo" permite navegação via menu -->
             <article id="resumo" class="section">
+            
+                <!-- Título da seção de resumo -->
                 <h2>📝 Resumo das Leis</h2>
+                
+                <!-- Tabela com resumo comparativo das três leis -->
+                <!-- class="tabela-resumo" aplica estilos especiais para tabelas -->
                 <table class="tabela-resumo">
+                
+                    <!-- Seção de cabeçalho da tabela -->
                     <thead>
+                        <!-- Linha de cabeçalho -->
                         <tr>
+                            <!-- Célula de cabeçalho: Lei -->
                             <th>Lei</th>
+                            
+                            <!-- Célula de cabeçalho: Nome da lei -->
                             <th>Nome</th>
+                            
+                            <!-- Célula de cabeçalho: Fórmula -->
                             <th>Fórmula</th>
+                            
+                            <!-- Célula de cabeçalho: Conceito principal -->
                             <th>Conceito Principal</th>
                         </tr>
                     </thead>
+                    
+                    <!-- Seção do corpo/dados da tabela -->
                     <tbody>
+                    
+                        <!-- Linha 1: Primeira lei -->
                         <tr>
+                            <!-- Número da lei -->
                             <td>1ª</td>
+                            
+                            <!-- Nome da lei -->
                             <td>Inércia</td>
+                            
+                            <!-- Fórmula -->
                             <td>ΣF = 0 → v = constante</td>
+                            
+                            <!-- Conceito principal -->
                             <td>Corpos mantêm seu estado de movimento</td>
                         </tr>
+                        
+                        <!-- Linha 2: Segunda lei -->
                         <tr>
+                            <!-- Número da lei -->
                             <td>2ª</td>
+                            
+                            <!-- Nome da lei -->
                             <td>Dinâmica</td>
+                            
+                            <!-- Fórmula -->
                             <td>F = m · a</td>
+                            
+                            <!-- Conceito principal -->
                             <td>Força produz aceleração</td>
                         </tr>
+                        
+                        <!-- Linha 3: Terceira lei -->
                         <tr>
+                            <!-- Número da lei -->
                             <td>3ª</td>
+                            
+                            <!-- Nome da lei -->
                             <td>Ação-Reação</td>
+                            
+                            <!-- Fórmula -->
                             <td>F ação = -F reação</td>
+                            
+                            <!-- Conceito principal -->
                             <td>Forças sempre ocorrem em pares</td>
                         </tr>
                     </tbody>
                 </table>
             </article>
-                        </div>
-                    </div>
-                </div>
-            </article>
         </main>
 
+        <!-- ============================================
+             FOOTER - RODAPÉ
+             ============================================ -->
+        
+        <!-- Elemento footer semântico que marca a seção de rodapé -->
+        <!-- role="contentinfo" marca explicitamente como informações de rodapé -->
         <footer role="contentinfo">
+        
+            <!-- Elemento figure com logo no rodapé -->
             <figure>
+                <!-- Logo do projeto educativo -->
+                <!-- alt descreve a imagem para leitores de tela -->
                 <img src="image.png" alt="Logo das Leis de Newton - Footer">
+                
+                <!-- Caption descritivo da imagem -->
                 <figcaption>Logo do projeto educativo</figcaption>
             </figure>
+            
+            <!-- Parágrafo com informações do autor e créditos -->
             <p>📖 Aula de Física - Leis de Newton | Criado por Wilnner Luka com o auxílio do Professor das disciplinas de Programação WEB (PHP/Java/MySQL/HTML/CSS) e Lógica de Programação</p>
+            
+            <!-- Parágrafo com informações sobre Isaac Newton -->
             <p>Isaac Newton (1643-1727) - Cientista britânico</p>
         </footer>
     </div>
 
-    <!-- ARIA live region for announcements -->
+    <!-- ============================================
+         ACESSIBILIDADE - LIVE REGION
+         ============================================ -->
+    
+    <!-- Div invisível que anuncia mudanças dinâmicas para leitores de tela -->
+    <!-- id="site-aria-live" permite que JavaScript atualize esta região -->
+    <!-- aria-live="polite" anuncia mudanças quando apropriado -->
+    <!-- aria-atomic="true" anuncia o conteúdo completo quando muda -->
+    <!-- class="visually-hidden" esconde visualmente mas mantém no fluxo de leitura -->
     <div id="site-aria-live" aria-live="polite" aria-atomic="true" class="visually-hidden"></div>
 
+    <!-- ============================================
+         IMPORTAÇÃO DE JAVASCRIPT
+         ============================================ -->
+    
+    <!-- Importa o arquivo script.js que contém toda a lógica JavaScript -->
+    <!-- src="script.js" caminho relativo do arquivo -->
+    <!-- defer faz o script carregar depois de todo o HTML ser processado -->
+    <!-- Melhora performance da página -->
     <script src="script.js" defer></script>
 </body>
+
+<!-- Fim do documento HTML -->
 </html>
