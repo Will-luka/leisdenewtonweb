@@ -5,6 +5,7 @@
 // Inicialização quando o DOM está pronto
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🔬 Aula de Leis de Newton carregada!');
+    initializeTheme();
     initializeInercia();
     initializeCalculadoraForca();
     initializeAcaoReacao();
@@ -79,12 +80,12 @@ function initializeCalculadoraForca() {
 // 3ª Lei - Ação-Reação
 // ========================
 function initializeAcaoReacao() {
-    const btnAcaoReacao = document.getElementById('btn-acao-reação');
+    const btnAcaoReacao = document.getElementById('btn-acao-reacao');
     const objeto1 = document.getElementById('objeto1');
     const objeto2 = document.getElementById('objeto2');
     const forca1 = document.getElementById('forca1');
     const forca2 = document.getElementById('forca2');
-    const resultado = document.getElementById('resultado-acao-reação');
+    const resultado = document.getElementById('resultado-acao-reacao');
     
     if (!btnAcaoReacao) return;
     
@@ -254,6 +255,7 @@ function showConfete() {
         confete.remove();
     }, 1100);
 }
+
 // ========================
 // TEMA - Paleta de Cores
 // ========================
@@ -293,13 +295,3 @@ function aplicarTema(tema) {
     // Adicionar novo tema
     body.classList.add(tema);
 }
-
-// Chamar na inicialização
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('🔬 Aula de Leis de Newton carregada!');
-    initializeTheme();  // ← ADICIONE ESTA LINHA
-    initializeInercia();
-    initializeCalculadoraForca();
-    initializeAcaoReacao();
-    initializeExercicios();
-});
