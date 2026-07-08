@@ -1,651 +1,812 @@
+/* ============================================
+   ESTILOS GERAIS - LEIS DE NEWTON
+   ============================================ */
+
 /* Reset e configurações gerais */
+/* Remove margens, preenchimento padrão e define modelo de caixa universal */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0;              /* Remove margem padrão de todos os elementos */
+    padding: 0;             /* Remove preenchimento padrão de todos os elementos */
+    box-sizing: border-box;  /* Inclui padding e border na largura total do elemento */
 }
 
+/* Estilos do corpo da página */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d0000 100%);
-    color: #e0e0e0;
-    line-height: 1.6;
-    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Define fonte principal com fallbacks */
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d0000 100%);  /* Fundo gradiente de cinza escuro para vermelho */
+    color: #e0e0e0;         /* Define cor do texto como cinza claro */
+    line-height: 1.6;       /* Define espaçamento entre linhas para melhor legibilidade */
+    min-height: 100vh;      /* Define altura mínima como 100% da altura da viewport */
 }
 
+/* Container principal - define largura máxima e centraliza conteúdo */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 1200px;      /* Define largura máxima do container */
+    margin: 0 auto;         /* Centraliza o container (margem automática nos lados) */
+    padding: 20px;          /* Adiciona espaço interno em todos os lados */
 }
 
-/* Header */
+/* ============================================
+   HEADER - CABEÇALHO PRINCIPAL
+   ============================================ */
+
+/* Estilos do cabeçalho */
 header {
-    text-align: center;
-    background: #1a1a1a;
-    padding: 40px 20px;
-    margin-bottom: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border: 2px solid #DC143C;
+    text-align: center;     /* Alinha o conteúdo ao centro horizontalmente */
+    background: #1a1a1a;    /* Fundo cinza escuro */
+    padding: 40px 20px;     /* Espaço interno: 40px vertical, 20px horizontal */
+    margin-bottom: 30px;    /* Espaço externo abaixo do header */
+    border-radius: 15px;    /* Arredonda os cantos com raio de 15px */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);  /* Sombra preta com desfoque */
+    border: 2px solid #DC143C;  /* Borda vermelha (Crimson) com 2px de espessura */
 }
 
+/* Título principal do header */
 header h1 {
-    font-size: 3em;
-    color: #FF4444;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 3em;         /* Define tamanho da fonte como 3 vezes o tamanho padrão */
+    color: #FF4444;         /* Define cor do texto como vermelho claro */
+    margin-bottom: 10px;    /* Espaço abaixo do título */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /* Sombra ao texto para profundidade */
 }
 
+/* Subtítulo do header */
 .subtitle {
-    font-size: 1.3em;
-    color: #b0b0b0;
-    font-style: italic;
+    font-size: 1.3em;       /* Define tamanho da fonte como 1.3 vezes o tamanho padrão */
+    color: #b0b0b0;         /* Define cor como cinza médio */
+    font-style: italic;     /* Aplica estilo itálico ao texto */
 }
 
-/* Menu de Navegação - CAIXA MELHORADA */
+/* ============================================
+   MENU DE NAVEGAÇÃO
+   ============================================ */
+
+/* Container do menu */
 .menu {
-    background: #1a1a1a;
-    padding: 20px;
-    margin-bottom: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-    border: 2px solid #DC143C;
+    background: #1a1a1a;    /* Fundo cinza escuro */
+    padding: 20px;          /* Espaço interno em todos os lados */
+    margin-bottom: 30px;    /* Espaço externo abaixo do menu */
+    border-radius: 12px;    /* Arredonda os cantos com raio de 12px */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);  /* Sombra preta com desfoque */
+    border: 2px solid #DC143C;  /* Borda vermelha com 2px de espessura */
 }
 
+/* Lista do menu */
 .menu ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    padding: 0;
+    list-style: none;       /* Remove marcadores padrão da lista */
+    display: flex;          /* Usa flexbox para alinhar itens horizontalmente */
+    flex-wrap: wrap;        /* Permite que itens quebrem para a próxima linha se necessário */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 15px;              /* Define espaço entre os itens do menu */
+    padding: 0;             /* Remove padding padrão */
 }
 
+/* Itens da lista do menu */
 .menu li {
-    padding: 0;
+    padding: 0;             /* Remove padding para controle mais preciso via links */
 }
 
+/* Remove o pseudo-elemento padrão (bullet point) dos itens */
 .menu li::before {
-    content: "";
+    content: "";            /* Remove qualquer conteúdo antes do item */
 }
 
+/* Links do menu */
 .menu a {
-    display: inline-block;
-    padding: 10px 25px;
-    background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.4);
+    display: inline-block;  /* Permite aplicar padding, altura e largura */
+    padding: 10px 25px;     /* Espaço interno: 10px vertical, 25px horizontal */
+    background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);  /* Fundo gradiente vermelho */
+    color: white;           /* Texto branco */
+    text-decoration: none;  /* Remove sublinhado padrão */
+    border-radius: 8px;     /* Arredonda os cantos */
+    font-weight: 600;       /* Define peso da fonte como semibold */
+    transition: all 0.3s ease;  /* Suaviza transições de propriedades em 0.3s */
+    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.4);  /* Sombra vermelha */
 }
 
+/* Estado hover dos links do menu */
 .menu a:hover {
-    background: linear-gradient(135deg, #FF4444 0%, #DC143C 100%);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(220, 20, 60, 0.6);
+    background: linear-gradient(135deg, #FF4444 0%, #DC143C 100%);  /* Gradiente vermelho mais claro */
+    transform: translateY(-3px);  /* Move o link 3px para cima */
+    box-shadow: 0 6px 18px rgba(220, 20, 60, 0.6);  /* Aumenta a sombra */
 }
 
+/* Estado active (clicado) dos links do menu */
 .menu a:active {
-    transform: translateY(-1px);
+    transform: translateY(-1px);  /* Move o link 1px para cima */
 }
 
-/* Sections */
+/* ============================================
+   SECTIONS - SEÇÕES PRINCIPAIS
+   ============================================ */
+
+/* Estilos das seções/artigos */
 .section {
-    background: #1a1a1a;
-    padding: 30px;
-    margin-bottom: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #333;
+    background: #1a1a1a;    /* Fundo cinza escuro */
+    padding: 30px;          /* Espaço interno em todos os lados */
+    margin-bottom: 30px;    /* Espaço externo abaixo da seção */
+    border-radius: 15px;    /* Arredonda os cantos */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);  /* Sombra preta */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Suaviza transições */
+    border: 1px solid #333; /* Borda cinza mais escura */
 }
 
+/* Estado hover das seções */
 .section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(220, 20, 60, 0.2);
-    border: 1px solid #DC143C;
+    transform: translateY(-5px);  /* Move a seção 5px para cima */
+    box-shadow: 0 15px 40px rgba(220, 20, 60, 0.2);  /* Aumenta a sombra com toque vermelho */
+    border: 1px solid #DC143C;  /* Muda a borda para vermelho */
 }
 
+/* Títulos h2 dentro das seções */
 .section h2 {
-    color: #FF4444;
-    font-size: 2em;
-    margin-bottom: 20px;
-    border-bottom: 3px solid #DC143C;
-    padding-bottom: 10px;
+    color: #FF4444;         /* Cor vermelha claro */
+    font-size: 2em;         /* Tamanho dobrado */
+    margin-bottom: 20px;    /* Espaço abaixo do título */
+    border-bottom: 3px solid #DC143C;  /* Linha vermelha abaixo do título */
+    padding-bottom: 10px;   /* Espaço entre o texto e a linha */
 }
 
+/* Subtítulos h3 dentro das seções */
 .section h3 {
-    color: #FF6666;
-    font-size: 1.4em;
-    margin: 20px 0 10px;
+    color: #FF6666;         /* Cor vermelha mais clara */
+    font-size: 1.4em;       /* Tamanho 1.4 vezes o padrão */
+    margin: 20px 0 10px;    /* Espaço: 20px acima, 0 lados, 10px abaixo */
 }
 
-/* Lei Card */
+/* ============================================
+   LEI CARD - CARDS PARA AS LEIS
+   ============================================ */
+
+/* Barra lateral vermelha para destacar cards das leis */
 .lei-card {
-    border-left: 5px solid #DC143C;
+    border-left: 5px solid #DC143C;  /* Barra vermelha no lado esquerdo */
 }
 
+/* Conteúdo dentro do card da lei */
 .lei-conteudo {
-    padding: 10px;
+    padding: 10px;          /* Espaço interno pequeno */
 }
 
+/* Definição da lei (em destaque especial) */
 .lei-definicao {
-    background: #2d0000;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    font-size: 1.1em;
-    color: #e0e0e0;
-    border: 1px solid #DC143C;
+    background: #2d0000;    /* Fundo vermelho muito escuro */
+    padding: 15px;          /* Espaço interno */
+    border-radius: 8px;     /* Arredonda os cantos */
+    margin-bottom: 20px;    /* Espaço abaixo */
+    font-size: 1.1em;       /* Texto ligeiramente maior */
+    color: #e0e0e0;         /* Texto cinza claro */
+    border: 1px solid #DC143C;  /* Borda vermelha */
 }
 
-/* Fórmulas */
+/* ============================================
+   FÓRMULAS MATEMÁTICAS
+   ============================================ */
+
+/* Container das fórmulas */
 .formula {
-    background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);
-    color: white;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 10px;
-    text-align: center;
+    background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);  /* Fundo gradiente vermelho */
+    color: white;           /* Texto branco */
+    padding: 20px;          /* Espaço interno */
+    margin: 20px 0;         /* Espaço externo vertical */
+    border-radius: 10px;    /* Arredonda os cantos */
+    text-align: center;     /* Alinha o conteúdo ao centro */
 }
 
+/* Fórmula principal (destaque adicional) */
 .formula.principal {
-    background: linear-gradient(135deg, #FF4444 0%, #DC143C 100%);
+    background: linear-gradient(135deg, #FF4444 0%, #DC143C 100%);  /* Gradiente mais claro */
 }
 
+/* Texto da fórmula matemática */
 .formula span {
-    font-size: 1.8em;
-    font-weight: bold;
-    display: block;
-    margin: 10px 0;
-    font-family: 'Courier New', monospace;
+    font-size: 1.8em;       /* Texto bem maior para destaque */
+    font-weight: bold;      /* Texto em negrito */
+    display: block;         /* Faz o elemento ocupar uma linha inteira */
+    margin: 10px 0;         /* Espaço vertical */
+    font-family: 'Courier New', monospace;  /* Fonte monoespaçada para código */
 }
 
+/* Nota explicativa da fórmula */
 .formula .nota {
-    font-size: 0.9em;
-    margin-top: 10px;
-    opacity: 0.9;
+    font-size: 0.9em;       /* Texto ligeiramente menor */
+    margin-top: 10px;       /* Espaço acima */
+    opacity: 0.9;           /* Levemente transparente */
 }
 
-/* Listas */
+/* ============================================
+   LISTAS
+   ============================================ */
+
+/* Estilos gerais de listas não ordenadas */
 ul {
-    list-style: none;
-    padding-left: 10px;
+    list-style: none;       /* Remove marcadores padrão */
+    padding-left: 10px;     /* Pequeno preenchimento à esquerda */
 }
 
+/* Itens das listas */
 ul li {
-    padding: 8px 0;
-    padding-left: 30px;
-    position: relative;
-    font-size: 1.05em;
-    color: #e0e0e0;
+    padding: 8px 0;         /* Espaço vertical entre itens */
+    padding-left: 30px;     /* Espaço para o ícone customizado */
+    position: relative;     /* Permite posicionar o pseudo-elemento */
+    font-size: 1.05em;      /* Texto ligeiramente maior */
+    color: #e0e0e0;         /* Texto cinza claro */
 }
 
+/* Marcador customizado (checkmark) antes de cada item */
 ul li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #FF4444;
-    font-weight: bold;
+    content: "✓";           /* Símbolo de verificação */
+    position: absolute;     /* Posiciona de forma absoluta */
+    left: 0;                /* Alinha à esquerda */
+    color: #FF4444;         /* Cor vermelha */
+    font-weight: bold;      /* Texto em negrito */
 }
 
-/* Interatividade */
+/* ============================================
+   INTERATIVIDADE E EXPERIMENTOS
+   ============================================ */
+
+/* Container dos experimentos interativos */
 .interatividade {
-    background: #2d0000;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 10px;
-    border: 2px solid #DC143C;
-    color: #e0e0e0;
+    background: #2d0000;    /* Fundo vermelho muito escuro */
+    padding: 20px;          /* Espaço interno */
+    margin: 20px 0;         /* Espaço externo vertical */
+    border-radius: 10px;    /* Arredonda os cantos */
+    border: 2px solid #DC143C;  /* Borda vermelha */
+    color: #e0e0e0;         /* Texto cinza claro */
 }
 
+/* Título dentro do container interativo */
 .interatividade h3 {
-    margin-top: 0;
-    color: #FF6666;
+    margin-top: 0;          /* Remove margem acima */
+    color: #FF6666;         /* Cor vermelha mais clara */
 }
 
-/* Botões */
+/* ============================================
+   BOTÕES
+   ============================================ */
+
+/* Estilos gerais dos botões */
 .btn {
-    background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);
-    color: white;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1em;
-    cursor: pointer;
-    margin: 10px 5px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.5);
+    background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);  /* Fundo gradiente vermelho */
+    color: white;           /* Texto branco */
+    padding: 12px 30px;     /* Espaço interno: 12px vertical, 30px horizontal */
+    border: none;           /* Remove borda padrão */
+    border-radius: 8px;     /* Arredonda os cantos */
+    font-size: 1.1em;       /* Texto ligeiramente maior */
+    cursor: pointer;        /* Muda o cursor para indicar clicabilidade */
+    margin: 10px 5px;       /* Espaço externo */
+    transition: all 0.3s ease;  /* Suaviza transições */
+    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.5);  /* Sombra vermelha */
 }
 
+/* Estado hover dos botões */
 .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(220, 20, 60, 0.7);
-    background: linear-gradient(135deg, #FF4444 0%, #DC143C 100%);
+    transform: translateY(-2px);  /* Move o botão 2px para cima */
+    box-shadow: 0 6px 20px rgba(220, 20, 60, 0.7);  /* Aumenta a sombra */
+    background: linear-gradient(135deg, #FF4444 0%, #DC143C 100%);  /* Gradiente mais claro */
 }
 
+/* Estado active (clicado) dos botões */
 .btn:active {
-    transform: translateY(0);
+    transform: translateY(0);  /* Volta à posição original */
 }
 
-/* Calculadora */
+/* ============================================
+   CALCULADORA
+   ============================================ */
+
+/* Container da calculadora */
 .calculadora {
-    background: #1a1a1a;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 15px 0;
-    border: 1px solid #333;
+    background: #1a1a1a;    /* Fundo cinza escuro */
+    padding: 20px;          /* Espaço interno */
+    border-radius: 10px;    /* Arredonda os cantos */
+    margin: 15px 0;         /* Espaço externo vertical */
+    border: 1px solid #333; /* Borda cinza escura */
 }
 
+/* Labels dos inputs da calculadora */
 .calculadora label {
-    display: block;
-    margin: 10px 0 5px;
-    font-weight: bold;
-    color: #FF6666;
+    display: block;         /* Faz cada label ocupar uma linha */
+    margin: 10px 0 5px;     /* Espaço: 10px acima, 5px abaixo */
+    font-weight: bold;      /* Texto em negrito */
+    color: #FF6666;         /* Cor vermelha mais clara */
 }
 
+/* Campos de entrada (inputs) da calculadora */
 .calculadora input {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #444;
-    border-radius: 5px;
-    font-size: 1em;
-    background: #2a2a2a;
-    color: #e0e0e0;
-    transition: border-color 0.3s ease;
+    width: 100%;            /* Ocupa 100% da largura disponível */
+    padding: 10px;          /* Espaço interno */
+    border: 2px solid #444; /* Borda cinza escura */
+    border-radius: 5px;     /* Arredonda ligeiramente os cantos */
+    font-size: 1em;         /* Tamanho de fonte padrão */
+    background: #2a2a2a;    /* Fundo cinza muito escuro */
+    color: #e0e0e0;         /* Texto cinza claro */
+    transition: border-color 0.3s ease;  /* Suaviza mudança de cor da borda */
 }
 
+/* Estado focus (quando o input está selecionado) */
 .calculadora input:focus {
-    outline: none;
-    border-color: #DC143C;
-    background: #333;
+    outline: none;          /* Remove outline padrão */
+    border-color: #DC143C;  /* Muda a borda para vermelho */
+    background: #333;       /* Muda o fundo para cinza um pouco mais claro */
 }
 
-/* Resultados */
+/* ============================================
+   RESULTADOS
+   ============================================ */
+
+/* Container para exibir resultados */
 .resultado {
-    background: #2d0000;
-    padding: 15px;
-    margin: 15px 0;
-    border-radius: 8px;
-    border-left: 4px solid #DC143C;
-    font-weight: bold;
-    color: #FF6666;
+    background: #2d0000;    /* Fundo vermelho muito escuro */
+    padding: 15px;          /* Espaço interno */
+    margin: 15px 0;         /* Espaço externo vertical */
+    border-radius: 8px;     /* Arredonda os cantos */
+    border-left: 4px solid #DC143C;  /* Barra vermelha no lado esquerdo */
+    font-weight: bold;      /* Texto em negrito */
+    color: #FF6666;         /* Cor vermelha mais clara */
 }
 
-/* Demo Box */
+/* ============================================
+   DEMO BOX - CAIXAS DE SIMULAÇÃO
+   ============================================ */
+
+/* Container para demonstrações/simulações */
 .demo-box {
-    background: #2a2a2a;
-    height: 120px;
-    margin: 15px 0;
-    border-radius: 8px;
-    position: relative;
-    overflow: hidden;
-    border: 2px solid #444;
+    background: #2a2a2a;    /* Fundo cinza muito escuro */
+    height: 120px;          /* Altura fixa */
+    margin: 15px 0;         /* Espaço externo vertical */
+    border-radius: 8px;     /* Arredonda os cantos */
+    position: relative;     /* Posicionamento relativo para elementos dentro */
+    overflow: hidden;       /* Corta conteúdo que sai da caixa */
+    border: 2px solid #444; /* Borda cinza escura */
 }
 
+/* Versão dual da demo box (para ação-reação) */
 .demo-box.dual {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex;          /* Usa flexbox */
+    align-items: center;    /* Centraliza items verticalmente */
+    justify-content: center; /* Centraliza items horizontalmente */
 }
 
+/* Objeto animado dentro da demo box */
 .objeto {
-    font-size: 3em;
-    position: absolute;
-    transition: all 0.5s ease;
+    font-size: 3em;         /* Tamanho bem grande para o emoji/símbolo */
+    position: absolute;     /* Posicionamento absoluto para animação */
+    transition: all 0.5s ease;  /* Suaviza animações em 0.5s */
 }
 
+/* Posição específica do objeto de inércia */
 .objeto#objeto-inercia {
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+    left: 20px;             /* Posição 20px da esquerda */
+    top: 50%;               /* Centraliza verticalmente */
+    transform: translateY(-50%);  /* Move 50% para cima para centralizar */
 }
 
+/* Posição específica do objeto 1 (ação-reação) */
 .objeto#objeto1 {
-    left: 30%;
+    left: 30%;              /* 30% da esquerda */
 }
 
+/* Posição específica do objeto 2 (ação-reação) */
 .objeto#objeto2 {
-    right: 30%;
+    right: 30%;             /* 30% da direita */
 }
 
+/* Setas de força (para visualizar forças aplicadas) */
 .forca-arrow {
-    position: absolute;
-    height: 3px;
-    background: #FF4444;
-    transition: all 0.5s ease;
+    position: absolute;     /* Posicionamento absoluto */
+    height: 3px;            /* Altura fina como uma linha */
+    background: #FF4444;    /* Fundo vermelho */
+    transition: all 0.5s ease;  /* Suaviza transições em 0.5s */
 }
 
+/* Primeira seta de força */
 #forca1 {
-    width: 60px;
-    top: 50%;
-    transform: translateY(-50%);
+    width: 60px;            /* Largura de 60px */
+    top: 50%;               /* Centraliza verticalmente */
+    transform: translateY(-50%);  /* Move 50% para cima */
 }
 
+/* Segunda seta de força */
 #forca2 {
-    width: 60px;
-    top: 50%;
-    transform: translateY(-50%);
+    width: 60px;            /* Largura de 60px */
+    top: 50%;               /* Centraliza verticalmente */
+    transform: translateY(-50%);  /* Move 50% para cima */
 }
 
-/* Tabela */
+/* ============================================
+   TABELAS
+   ============================================ */
+
+/* Container da tabela de resumo */
 .tabela-resumo {
-    width: 100%;
-    margin: 20px 0;
-    border-collapse: collapse;
-    background: #1a1a1a;
-    border-radius: 10px;
-    overflow: hidden;
+    width: 100%;            /* Ocupa 100% da largura */
+    margin: 20px 0;         /* Espaço externo vertical */
+    border-collapse: collapse;  /* Remove espaço entre células */
+    background: #1a1a1a;    /* Fundo cinza escuro */
+    border-radius: 10px;    /* Arredonda os cantos */
+    overflow: hidden;       /* Corta conteúdo que sai */
 }
 
+/* Headers (cabeçalho) da tabela */
 .tabela-resumo th {
-    background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);
-    color: white;
-    padding: 15px;
-    text-align: left;
-    font-weight: bold;
+    background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);  /* Fundo gradiente vermelho */
+    color: white;           /* Texto branco */
+    padding: 15px;          /* Espaço interno */
+    text-align: left;       /* Alinha o texto à esquerda */
+    font-weight: bold;      /* Texto em negrito */
 }
 
+/* Células de dados da tabela */
 .tabela-resumo td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #333;
-    color: #e0e0e0;
+    padding: 12px 15px;     /* Espaço interno */
+    border-bottom: 1px solid #333;  /* Borda cinza sob cada célula */
+    color: #e0e0e0;         /* Texto cinza claro */
 }
 
+/* Linha da tabela ao passar o mouse */
 .tabela-resumo tr:hover {
-    background: #2d0000;
+    background: #2d0000;    /* Fundo vermelho muito escuro */
 }
 
-/* Exercícios */
+/* ============================================
+   EXERCÍCIOS
+   ============================================ */
+
+/* Container dos exercícios */
 .exercicios-container {
-    display: grid;
-    gap: 20px;
+    display: grid;          /* Usa CSS Grid */
+    gap: 20px;              /* Espaço entre items da grid */
 }
 
+/* Estilo de cada exercício */
 .exercico {
-    background: #2d0000;
-    padding: 20px;
-    border-radius: 10px;
-    border: 2px solid #DC143C;
-    color: #e0e0e0;
+    background: #2d0000;    /* Fundo vermelho muito escuro */
+    padding: 20px;          /* Espaço interno */
+    border-radius: 10px;    /* Arredonda os cantos */
+    border: 2px solid #DC143C;  /* Borda vermelha */
+    color: #e0e0e0;         /* Texto cinza claro */
 }
 
+/* Título do exercício */
 .exercico h3 {
-    color: #FF6666;
-    margin-bottom: 10px;
+    color: #FF6666;         /* Cor vermelha mais clara */
+    margin-bottom: 10px;    /* Espaço abaixo */
 }
 
+/* Parágrafos dentro do exercício */
 .exercico p {
-    margin: 10px 0;
-    font-size: 1.05em;
+    margin: 10px 0;         /* Espaço vertical entre parágrafos */
+    font-size: 1.05em;      /* Texto ligeiramente maior */
 }
 
+/* Botão para mostrar/ocultar resposta */
 .btn-toggle-resposta {
-    background: #DC143C;
-    color: white;
-    padding: 8px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 10px 0;
-    transition: background 0.3s ease;
+    background: #DC143C;    /* Fundo vermelho */
+    color: white;           /* Texto branco */
+    padding: 8px 20px;      /* Espaço interno pequeno */
+    border: none;           /* Remove borda padrão */
+    border-radius: 5px;     /* Arredonda levemente os cantos */
+    cursor: pointer;        /* Muda cursor para indicar clicabilidade */
+    margin: 10px 0;         /* Espaço externo vertical */
+    transition: background 0.3s ease;  /* Suaviza mudança de fundo */
 }
 
+/* Estado hover do botão de resposta */
 .btn-toggle-resposta:hover {
-    background: #FF4444;
+    background: #FF4444;    /* Fundo vermelho mais claro */
 }
 
+/* Container das respostas (inicialmente oculto) */
 .resposta {
-    display: none;
-    background: #1a4d1a;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 8px;
-    border-left: 4px solid #4CAF50;
-    color: #90EE90;
+    display: none;          /* Oculta inicialmente */
+    background: #1a4d1a;    /* Fundo verde escuro */
+    padding: 15px;          /* Espaço interno */
+    margin: 10px 0;         /* Espaço externo vertical */
+    border-radius: 8px;     /* Arredonda os cantos */
+    border-left: 4px solid #4CAF50;  /* Barra verde no lado esquerdo */
+    color: #90EE90;         /* Texto verde claro */
 }
 
+/* Classe para mostrar a resposta */
 .resposta.show {
-    display: block;
+    display: block;         /* Exibe a resposta */
 }
 
-/* Footer */
+/* ============================================
+   FOOTER - RODAPÉ
+   ============================================ */
+
+/* Container do rodapé */
 footer {
-    background: #1a1a1a;
-    text-align: center;
-    padding: 30px;
-    margin-top: 40px;
-    border-radius: 15px;
-    color: #b0b0b0;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border: 2px solid #DC143C;
+    background: #1a1a1a;    /* Fundo cinza escuro */
+    text-align: center;     /* Alinha conteúdo ao centro */
+    padding: 30px;          /* Espaço interno */
+    margin-top: 40px;       /* Espaço acima do footer */
+    border-radius: 15px;    /* Arredonda os cantos */
+    color: #b0b0b0;         /* Texto cinza médio */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);  /* Sombra preta */
+    border: 2px solid #DC143C;  /* Borda vermelha */
 }
 
+/* Parágrafos dentro do footer */
 footer p {
-    margin: 5px 0;
+    margin: 5px 0;          /* Pequeno espaço vertical entre parágrafos */
 }
 
-/* Responsividade */
+/* ============================================
+   RESPONSIVIDADE - TABLET (até 768px)
+   ============================================ */
+
 @media (max-width: 768px) {
+    /* Reduz tamanho do título para tablets */
     header h1 {
-        font-size: 2em;
+        font-size: 2em;     /* Reduz de 3em para 2em */
     }
     
+    /* Reduz padding das seções */
     .section {
-        padding: 20px;
+        padding: 20px;      /* Reduz de 30px para 20px */
     }
     
+    /* Reduz tamanho do título das seções */
     .section h2 {
-        font-size: 1.5em;
+        font-size: 1.5em;   /* Reduz de 2em para 1.5em */
     }
     
+    /* Reduz tamanho das fórmulas */
     .formula span {
-        font-size: 1.3em;
+        font-size: 1.3em;   /* Reduz de 1.8em para 1.3em */
     }
     
+    /* Reduz tamanho da fonte da tabela */
     .tabela-resumo {
-        font-size: 0.9em;
+        font-size: 0.9em;   /* Reduz fonte geral para 0.9em */
     }
     
+    /* Reduz padding da tabela */
     .tabela-resumo th,
     .tabela-resumo td {
-        padding: 10px;
+        padding: 10px;      /* Reduz de 15px/12px para 10px */
     }
 
-    /* Menu responsivo */
+    /* Menu responsivo para tablet */
     .menu {
-        padding: 15px;
+        padding: 15px;      /* Reduz padding de 20px para 15px */
     }
 
+    /* Ajusta espaçamento dos itens do menu */
     .menu ul {
-        gap: 10px;
+        gap: 10px;          /* Reduz espaço entre items de 15px para 10px */
     }
 
+    /* Ajusta padding dos links do menu */
     .menu a {
-        padding: 8px 15px;
-        font-size: 0.95em;
+        padding: 8px 15px;  /* Reduz de 10px 25px para 8px 15px */
+        font-size: 0.95em;  /* Reduz tamanho de fonte */
     }
 }
+
+/* ============================================
+   RESPONSIVIDADE - MOBILE (até 480px)
+   ============================================ */
 
 @media (max-width: 480px) {
+    /* Reduz padding do container */
     .container {
-        padding: 10px;
+        padding: 10px;      /* Reduz de 20px para 10px */
     }
     
+    /* Reduz padding do header */
     header {
-        padding: 20px 10px;
+        padding: 20px 10px; /* Reduz de 40px 20px */
     }
     
+    /* Reduz tamanho dos botões */
     .btn {
-        padding: 10px 20px;
-        font-size: 1em;
+        padding: 10px 20px; /* Reduz de 12px 30px */
+        font-size: 1em;     /* Reduz de 1.1em para 1em */
     }
 
-    /* Menu responsivo mobile */
+    /* Menu responsivo para mobile */
     .menu {
-        padding: 10px;
+        padding: 10px;      /* Reduz de 15px para 10px */
     }
 
+    /* Muda direção do flex para vertical */
     .menu ul {
-        flex-direction: column;
-        gap: 8px;
+        flex-direction: column;  /* Alinha items verticalmente */
+        gap: 8px;           /* Reduz espaço entre items para 8px */
     }
 
+    /* Faz links ocuparem toda a largura */
     .menu a {
-        width: 100%;
-        text-align: center;
-        padding: 10px 15px;
+        width: 100%;        /* Ocupa 100% da largura */
+        text-align: center; /* Centraliza o texto */
+        padding: 10px 15px; /* Pequeno padding */
     }
 }
-/* ========================
+
+/* ============================================
    TEMA CLARO
    ======================== */
+
+/* Fundo e texto para o tema claro */
 body.tema-claro {
-    background: linear-gradient(135deg, #f5f5f5 0%, #e8d5d5 100%);
-    color: #333;
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8d5d5 100%);  /* Fundo gradiente claro */
+    color: #333;            /* Texto escuro */
 }
 
+/* Seções no tema claro */
 body.tema-claro .section {
-    background: #ffffff;
-    border: 1px solid #ddd;
+    background: #ffffff;    /* Fundo branco */
+    border: 1px solid #ddd; /* Borda cinza claro */
 }
 
+/* Seções ao passar o mouse no tema claro */
 body.tema-claro .section:hover {
-    box-shadow: 0 15px 40px rgba(100, 100, 100, 0.2);
+    box-shadow: 0 15px 40px rgba(100, 100, 100, 0.2);  /* Sombra cinza */
 }
 
+/* Header, menu e footer no tema claro */
 body.tema-claro header,
 body.tema-claro .menu,
 body.tema-claro footer {
-    background: #f0f0f0;
-    border: 2px solid #4CAF50;
+    background: #f0f0f0;    /* Fundo cinza claro */
+    border: 2px solid #4CAF50;  /* Borda verde */
 }
 
+/* Título h1 no tema claro */
 body.tema-claro header h1 {
-    color: #2196F3;
+    color: #2196F3;         /* Cor azul */
 }
 
+/* Títulos h2 no tema claro */
 body.tema-claro .section h2 {
-    color: #2196F3;
-    border-bottom: 3px solid #4CAF50;
+    color: #2196F3;         /* Cor azul */
+    border-bottom: 3px solid #4CAF50;  /* Linha verde */
 }
 
+/* Links do menu no tema claro */
 body.tema-claro .menu a {
-    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);  /* Gradiente verde */
 }
 
+/* Estado hover dos links no tema claro */
 body.tema-claro .menu a:hover {
-    background: linear-gradient(135deg, #45a049 0%, #3d8b40 100%);
+    background: linear-gradient(135deg, #45a049 0%, #3d8b40 100%);  /* Gradiente verde mais escuro */
 }
 
+/* Definição da lei no tema claro */
 body.tema-claro .lei-definicao {
-    background: #e8f5e9;
-    border: 1px solid #4CAF50;
+    background: #e8f5e9;    /* Fundo verde muito claro */
+    border: 1px solid #4CAF50;  /* Borda verde */
 }
 
+/* Fórmulas no tema claro */
 body.tema-claro .formula {
-    background: linear-gradient(135deg, #4CAF50 0%, #388e3c 100%);
+    background: linear-gradient(135deg, #4CAF50 0%, #388e3c 100%);  /* Gradiente verde */
 }
 
-/* ========================
+/* ============================================
    TEMA ROXO
    ======================== */
+
+/* Fundo e texto para o tema roxo */
 body.tema-roxo {
-    background: linear-gradient(135deg, #2c3e50 0%, #3d1b4d 100%);
-    color: #e0e0e0;
+    background: linear-gradient(135deg, #2c3e50 0%, #3d1b4d 100%);  /* Fundo gradiente roxo */
+    color: #e0e0e0;         /* Texto cinza claro */
 }
 
+/* Header, menu e footer no tema roxo */
 body.tema-roxo header,
 body.tema-roxo .menu,
 body.tema-roxo footer {
-    background: #1a1a2e;
-    border: 2px solid #9c27b0;
+    background: #1a1a2e;    /* Fundo roxo muito escuro */
+    border: 2px solid #9c27b0;  /* Borda roxa */
 }
 
+/* Título h1 no tema roxo */
 body.tema-roxo header h1 {
-    color: #bb86fc;
+    color: #bb86fc;         /* Cor roxa clara */
 }
 
+/* Títulos h2 no tema roxo */
 body.tema-roxo .section h2 {
-    color: #bb86fc;
-    border-bottom: 3px solid #9c27b0;
+    color: #bb86fc;         /* Cor roxa clara */
+    border-bottom: 3px solid #9c27b0;  /* Linha roxa */
 }
 
+/* Links do menu no tema roxo */
 body.tema-roxo .menu a {
-    background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+    background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);  /* Gradiente roxo */
 }
 
+/* Estado hover dos links no tema roxo */
 body.tema-roxo .menu a:hover {
-    background: linear-gradient(135deg, #bb86fc 0%, #9c27b0 100%);
+    background: linear-gradient(135deg, #bb86fc 0%, #9c27b0 100%);  /* Gradiente roxo mais claro */
 }
 
+/* Definição da lei no tema roxo */
 body.tema-roxo .lei-definicao {
-    background: #3d1b4d;
-    border: 1px solid #9c27b0;
+    background: #3d1b4d;    /* Fundo roxo escuro */
+    border: 1px solid #9c27b0;  /* Borda roxa */
 }
 
+/* Fórmulas no tema roxo */
 body.tema-roxo .formula {
-    background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+    background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);  /* Gradiente roxo */
 }
 
-/* ========================
+/* ============================================
    TEMA AZUL
    ======================== */
+
+/* Fundo e texto para o tema azul */
 body.tema-azul {
-    background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
-    color: #e0e0e0;
+    background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);  /* Fundo gradiente azul */
+    color: #e0e0e0;         /* Texto cinza claro */
 }
 
+/* Header, menu e footer no tema azul */
 body.tema-azul header,
 body.tema-azul .menu,
 body.tema-azul footer {
-    background: #0d47a1;
-    border: 2px solid #2196F3;
+    background: #0d47a1;    /* Fundo azul escuro */
+    border: 2px solid #2196F3;  /* Borda azul */
 }
 
+/* Título h1 no tema azul */
 body.tema-azul header h1 {
-    color: #64b5f6;
+    color: #64b5f6;         /* Cor azul clara */
 }
 
+/* Títulos h2 no tema azul */
 body.tema-azul .section h2 {
-    color: #64b5f6;
-    border-bottom: 3px solid #2196F3;
+    color: #64b5f6;         /* Cor azul clara */
+    border-bottom: 3px solid #2196F3;  /* Linha azul */
 }
 
+/* Links do menu no tema azul */
 body.tema-azul .menu a {
-    background: linear-gradient(135deg, #2196F3 0%, #1976d2 100%);
+    background: linear-gradient(135deg, #2196F3 0%, #1976d2 100%);  /* Gradiente azul */
 }
 
+/* Estado hover dos links no tema azul */
 body.tema-azul .menu a:hover {
-    background: linear-gradient(135deg, #64b5f6 0%, #2196F3 100%);
+    background: linear-gradient(135deg, #64b5f6 0%, #2196F3 100%);  /* Gradiente azul mais claro */
 }
 
+/* Definição da lei no tema azul */
 body.tema-azul .lei-definicao {
-    background: #0d47a1;
-    border: 1px solid #2196F3;
+    background: #0d47a1;    /* Fundo azul escuro */
+    border: 1px solid #2196F3;  /* Borda azul */
 }
 
+/* Fórmulas no tema azul */
 body.tema-azul .formula {
-    background: linear-gradient(135deg, #2196F3 0%, #1565c0 100%);
+    background: linear-gradient(135deg, #2196F3 0%, #1565c0 100%);  /* Gradiente azul */
 }
 
-/* Estilo do botão de tema */
+/* ============================================
+   BOTÃO DE TEMA
+   ======================== */
+
+/* Estilos do botão para trocar de tema */
 .btn-tema {
-    background: none;
-    border: 2px solid #e0e0e0;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 1.8em;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-block;
+    background: none;       /* Sem fundo */
+    border: 2px solid #e0e0e0;  /* Borda cinza clara */
+    border-radius: 50%;     /* Forma circular */
+    width: 50px;            /* Largura fixa */
+    height: 50px;           /* Altura fixa */
+    font-size: 1.8em;       /* Ícone grande */
+    cursor: pointer;        /* Muda cursor para indicar clicabilidade */
+    transition: all 0.3s ease;  /* Suaviza transições */
+    display: inline-block;  /* Permite aplicar width/height */
 }
 
+/* Estado hover do botão de tema */
 .btn-tema:hover {
-    transform: scale(1.1) rotate(15deg);
-    border-color: #FF4444;
+    transform: scale(1.1) rotate(15deg);  /* Aumenta 10% e rotaciona 15 graus */
+    border-color: #FF4444;  /* Borda fica vermelha */
 }
